@@ -1,16 +1,25 @@
+body {
+    background-image: url("path/to/your/galaxy-image.jpg"); /* Replace with your galaxy image path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
 .star {
-  position: absolute;
-  top: random(100vh); /* Random position within viewport height */
-  left: random(100vw); /* Random position within viewport width */
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background-color: white;
-  animation: twinkle 2s infinite linear;
+    position: absolute;
+    top: random(100vh);
+    left: random(100vw);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0.4; /* Adjust opacity for readability */
+    animation: twinkle 2s infinite linear;
 }
 
 @keyframes twinkle {
-  0% { opacity: 1; }
-  50% { opacity: 0.5; }
-  100% { opacity: 1; }
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
 }
