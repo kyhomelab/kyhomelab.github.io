@@ -1,5 +1,5 @@
 body {
-    background-image: url("path/to/your/galaxy-image.jpg"); /* Replace with your galaxy image path */
+    background-image: url("assets/galaxy.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
