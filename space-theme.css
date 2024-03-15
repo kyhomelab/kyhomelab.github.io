@@ -1,0 +1,16 @@
+.star {
+  position: absolute;
+  top: random(100vh); /* Random position within viewport height */
+  left: random(100vw); /* Random position within viewport width */
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: white;
+  animation: twinkle 2s infinite linear;
+}
+
+@keyframes twinkle {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
