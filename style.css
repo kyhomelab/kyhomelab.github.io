@@ -6,10 +6,8 @@ body {
     color: #fff;
 }
 
-body {
-    position: relative;
-    min-height: 100vh; /* Ensures particles cover full viewport height */
-    z-index: -1; /* Places particles behind content */
+#particles-js {
+    z-index: -1;
 }
 
 header {
