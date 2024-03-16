@@ -9,9 +9,7 @@
   <script src="js/particles.js"></script>
 </head>
 <body>
-  <div id="particles-js"></div>
-
-  <header>
+  <div id="particles-js"></div>  <header>
     <h1>Kyle Homelab</h1>
     <h3>Cybersecurity Analyst & Programmer</h3>
   </header>
@@ -44,10 +42,10 @@
       particlesJS('particles-js', {
           particles: {
               number: {
-                  value: 100,  // Adjust for desired number of particles
+                  value: 200, // Adjust for desired number (more for denser background)
                   density: {
                       enable: true,
-                      value_area: 800, // Adjust for particle density
+                      value_area: 800, // Adjust for particle density (lower for less dense)
                   }
               },
               color: {
@@ -62,9 +60,15 @@
                   polygon: {
                       nb_sides: 5, // Adjust number of sides for polygon shape
                   },
+                  size: {
+                      value: 3,  // Adjust particle size (smaller than default)
+                      random: {
+                          value: 1,  // Adjust size variation
+                      }
+                  },
                   // ... (other shape properties)
               },
-              // ... (other particle properties like size, movement, etc.)
+              // ... (other particle properties like movement, etc.)
           }
       });
   </script>
