@@ -2,10 +2,10 @@
   image: https://img.freepik.com/free-vector/cute-astronaut-working-laptop-space-cartoon-vector-icon-illustration-science-technology-icon_138676-6019.jpg?w=1380&t=st=1710645392~exp=1710645992~hmac=ddc209670477a5f7a386b3ddab0c92141d6a407c5af37dca683e304e12063a29
   link: https://github.com/kyhomelab/HomeLab/tree/main
   description: Virtual Playground - Exploring the Frontiers of Tech in My HomeLab
-- name: Second Project
-  link:
-  image: https://cdn.pixabay.com/photo/2015/01/09/11/08/startup-594090_960_720.jpg
-  description: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas adipisci tempore illo accusantium consequatur doloremque dignissimos quo, maxime eius cum enim recusandae qui, delectus ea autem architecto? Velit natus, tempora, quaerat voluptates consectetur magnam aliquid veritatis cumque tempore ipsam delectus eveniet distinctio hic quod reiciendis excepturi beatae doloribus, recusandae ex sed sapiente aliquam deleniti! Quis commodi culpa doloremque quaerat rem natus! Vero ipsam expedita id at quidem. In sit voluptatibus error cum? Minima sunt porro, architecto natus accusantium earum rerum voluptate recusandae fugit, error consequatur, quibusdam dolore quod minus culpa ipsa laudantium odit distinctio exercitationem dolorum. Sunt iste cumque a quae reprehenderit sed dolorum, culpa hic dolores saepe asperiores illum consectetur vitae tenetur dolorem voluptatum totam in repellat voluptatibus laudantium deleniti quasi. Adipisci animi cupiditate eligendi optio nemo accusantium sed quo expedita modi dolor autem atque natus, non excepturi. Eaque inventore quis aperiam vel quae dicta tenetur, placeat facilis, natus dignissimos molestias quidem dolor ad voluptate nam harum maxime. Commodi illum esse iste eaque, saepe praesentium, vero adipisci necessitatibus tenetur maiores sit voluptate eos facere doloribus. Explicabo neque quibusdam, sint nihil reprehenderit alias asperiores aperiam rem voluptas quas, in qui odio quos similique at. Illo voluptas temporibus enim laudantium quas?
+- name: Setting up an SOC Lab
+  link: https://github.com/kyhomelab/SOC-Lab/tree/main
+  image: https://img.freepik.com/free-vector/cute-astronaut-reading-book-moon-cartoon-vector-icon-illustration-technology-education-icon-concept-isolated-premium-vector-flat-cartoon-style_138676-4200.jpg?w=1380&t=st=1710714316~exp=1710714916~hmac=682aa39666228677b2594fc9a2b9ed5e72bab7cc836de9c6571b2f3764bc55ad
+  description: This project offers a step-by-step guide to creating a SOC lab using Proxmox. Learn how to install essential security software like PfSense, Windows Server, and Sysmon. Simulate real-world scenarios with tools like BadBlood for Active Directory testing. 
 - name: Third Project
   link:
   image: https://cdn.pixabay.com/photo/2016/06/25/12/55/art-1478831_960_720.jpg
