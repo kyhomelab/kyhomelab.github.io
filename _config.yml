@@ -22,17 +22,17 @@ heroimage: https://www.chromethemer.com/wallpapers/chromebook-wallpapers/images/
 
 # Social Media and Contact
 # If you don't want to use any icon, you can leave them blank.
-email: thedevslot@gmail.com
-facebook_username: thedevslot
-twitter_username: thedevslot
-instagram_username: thedevslot
-linkedin_username: thedevslot
-github_username:  thedevslot
-youtube_channel_id: UCk_93NXYP-U_AOB5GfWlOow
-reddit_username: /
-behance_username: /
-dribbble_username: /
-spotify_username: /
+email: kayjay18m@gmail.com
+#facebook_username:
+#twitter_username:
+#instagram_username:
+#linkedin_username:
+github_username:  kyhomelab
+#youtube_channel_id:
+#reddit_username: /
+#behance_username: /
+#dribbble_username: /
+#spotify_username: /
 
 # Google Analytics
 google-analytics: UA-163806439-1
@@ -41,13 +41,13 @@ google-analytics: UA-163806439-1
 disqus-shortname: thedevslot
 
 # Name of the Author
-author-name: TheDevsLot
+author-name: Kyle S
 # URL for the Image of the Author
 author-image: https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png
 # 60 Words About the Author
 author-about: Kyle Stanley, an IT enthusiast who thrives on untangling technical knots. With a customer-centric approach honed through helpdesk and system administration, I ensure users stay productive while I tackle challenges head-on. My passion for learning fuels my expertise (CompTIA A+, Security+, Azure Administrator Associate), and I'm eager to leverage it for your success. Let's connect!
 # URL to the Author's Profile (i.e., Github, Twitter, Stackoverflow, etc)
-author-url: https://github.com/thedevslot
+author-url: https://github.com/kyhomelab
 
 # SASS
 sass:
