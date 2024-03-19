@@ -2,7 +2,7 @@
 title: About Me and Creating this Websie
 layout: post
 # Add an image for your homelab here
-post-image: "https://img.freepik.com/free-vector/asteroid-space-background_1308-33879.jpg?t=st=1710706502~exp=1710710102~hmac=304bfc7d30f1aa23ff87482687b95c95ce726b0f5adeba214494a6f76a7632e3&w=2000"
+post-image: "https://img.freepik.com/free-vector/cute-astronaut-paddling-moon-boat-space-cartoon-vector-icon-illustration-science-sport-isolated_138676-6931.jpg?w=1380&t=st=1710813163~exp=1710813763~hmac=051cbeefe2aecbd9663fb6938566dce542d41f668403b9ecf89142e620996564"
 description: A detailed look into my HomeLab environment for learning and experimentation.
 tags:
 - about
