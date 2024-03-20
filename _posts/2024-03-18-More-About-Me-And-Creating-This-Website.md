@@ -2,7 +2,7 @@
 title: About Me and Creating this Websie
 layout: post
 # Add an image for your homelab here
-post-image: "https://i.imgur.com/mKozXor.jpg"
+post-image: "https://i.imgur.com/UqvQcVZ.jpg"
 description: A detailed look into my HomeLab environment for learning and experimentation.
 tags:
 - about
