@@ -31,8 +31,8 @@ Hi there! Thank you for clicking on this post! My name is Kyle, and I wanted to 
 * [I created a script using powershell](https://github.com/kyhomelab/Powershell-Scripts) that would in order: Checking Administrator Privileges,  Setting Wallpaper, Displaying WiFi Password, Opening Disk Management, Windows Activation, Gathering System Information, Formatting, Opening Test Applications, and Exiting after a key input
 These are just a few highlights from working there, and I definitley learned a lot, especially when it comes to hardware and my first hands on with server administration and understanding networking
 
-### Currently i'm contracted out to [Venable LLP](https://www.venable.com/) and came on as a Senior Tier 1 analyst
-* 
+### Currently i'm contracted out to [Venable LLP](https://www.venable.com/) and came on as a Senior Tier 1 analyst:
+* Honestly, there is so much that I do here its really hard to talk about `EVERYTHING`
 **What Drives Me:**
 * 
 * [Bullet point 2 related to your passion/profession]
