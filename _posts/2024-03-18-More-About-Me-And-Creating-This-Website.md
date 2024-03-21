@@ -14,7 +14,8 @@ tags:
 
 Hi there! Thank you for clicking on this post! My name is Kyle, and I wanted to talk a little more about who I am, my passions, and my drives. I have been in a customer service role for 6+ years and started getting more into IT back in 2020 and getting my A+ om June 30, 2021. I've grown up around tech all my life, being designated as the IT guy that family and friends would go to. I absolutely love learning about computers, systems, coding, and anything else I can really get technical with. I remember trying to use Cheat Engine back in the Adventure Quest days. Nowadays, i'm a huge homelab enthusiast, building my own server using Proxmox, destroying our home network and pushing what I can do and learn.
 
-**My Journey:**
+## My Journey:
+
 At least in the Tech Industry I was able to have a job working at a PC building company for almost a year:
 * Started off as a customer service rep for the company. Taking calls, and triaging PC issues from not booting, to boot looping, and everythig in between.
 * Because it was a smaller company, within a few months I was able to become the helpdesk supervisor
