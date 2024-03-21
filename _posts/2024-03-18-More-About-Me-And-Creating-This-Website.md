@@ -27,8 +27,8 @@ At least in the Tech Industry I was able to have a job working at a PC building 
 * I ran into so many problems getting everything set up, but because of my drive and interest, I was able to get everything set up.
 * I pushed for better networking in the building, and was able to get an old Dell managed switch
 * The location for the switch was in the testing room, and I helped run ethernet lines throughout the building to about ~20 pcs spread throughout the building
-* I created a script using bash that would in order: set the wallpaper, display the wifi password, open disk management, 
-
+* I created a script using bash that would in order: Checking Administrator Privileges,  Setting Wallpaper, Displaying WiFi Password, Opening Disk Management, Windows Activation, Gathering System Information, Formatting, Opening Test Applications, and Exiting after a key input
+* 
 **What Drives Me:**
 * 
 * [Bullet point 2 related to your passion/profession]
