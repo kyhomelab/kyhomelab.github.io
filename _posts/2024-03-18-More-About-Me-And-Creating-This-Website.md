@@ -35,11 +35,11 @@ These are just a few highlights from working there, and I definitley learned a l
 * Honestly, there is so much that I do here its really hard to talk about `EVERYTHING`
 * Having this opportunity though, i've been able to get experience in an Enterprise setting and get a chance to see and use a lot of different applications and how things operate in an IT environment
 * Since I wear many hats, i've been able to use:<br>
-*Splunk*
-*Okta Verify*
-*Cherwell*
-*SCCM for remoting in*
-*Powershell for pulling Group Memberships*
+*Splunk*<br>
+*Okta Verify*<br>
+*Cherwell*<br>
+*SCCM for remoting in*<br>
+*Powershell for pulling Group Memberships*<br>
 *
 **What Drives Me:**
 * 
