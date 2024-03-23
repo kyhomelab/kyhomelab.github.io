@@ -10,7 +10,7 @@ tags:
 - learning
 ---
 
-## About Me: 
+## About Me:  
 
 Hi there! Thank you for clicking on this post! My name is Kyle, and I wanted to talk a little more about who I am, my passions, and my drives. I have been in a customer service role for 6+ years and started getting more into IT back in 2020 and getting my A+ on June 30, 2021. I've grown up around tech all my life, being designated as the IT guy that family and friends would go to. I absolutely love learning about computers, systems, coding, and anything else I can really get technical with. I remember trying to use Cheat Engine back in the Adventure Quest days. Nowadays, i'm a huge homelab enthusiast, building my own server using Proxmox, destroying our home network and pushing what I can do and learn.
 
@@ -41,7 +41,7 @@ These are just a few highlights from working there, and I definitley learned a l
 *SCCM for remoting in*<br>
 *Powershell for pulling Group Memberships*<br>
 *Citrix Workspace*<br>
-*Cisco Secure Mobility Client (VPN)<br>
+*Cisco Secure Mobility Client (VPN)*<br>
 *IManage*<br>
 *Citrix Director*<br>
 *Network Shares*<br>
