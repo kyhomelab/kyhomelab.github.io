@@ -28,7 +28,7 @@ Hi there! Thank you for clicking on this post! My name is Kyle, and I wanted to 
 * I ran into so many problems getting everything set up, but because of my drive and interest, I was able to get everything set up.
 * I pushed for better networking in the building, and was able to get an old Dell managed switch
 * The location for the switch was in the testing room, and I helped run ethernet lines throughout the building to about ~20 pcs spread throughout the building
-* [I created a script using powershell](https://github.com/kyhomelab/Powershell-Scripts) that would in order: Checking Administrator Privileges,  Setting Wallpaper, Displaying WiFi Password, Opening Disk Management, Windows Activation, Gathering System Information, Formatting, Opening Test Applications, and Exiting after a key input
+* [I created a script using powershell](https://github.com/kyhomelab/Powershell-Scripts) that would in order: Checking Administrator Privileges,  Setting Wallpaper, Displaying WiFi Password, Opening Disk Management, Windows Activation, Gathering System Information, Formatting, Opening Test Applications, and Exiting after a key input<br>
 These are just a few highlights from working there, and I definitley learned a lot, especially when it comes to hardware and my first hands on with server administration and understanding networking
 
 ### Currently i'm contracted out to [Venable LLP](https://www.venable.com/) and came on as a Senior Tier 1 analyst:
@@ -40,7 +40,15 @@ These are just a few highlights from working there, and I definitley learned a l
 *Cherwell*<br>
 *SCCM for remoting in*<br>
 *Powershell for pulling Group Memberships*<br>
-*
+*Citrix Workspace*<br>
+*Cisco Secure Mobility Client (VPN)<br>
+*iManage*<br>
+*Citrix Director*<br>
+*Network Shares*<br>
+*Microsoft Office*<br>
+*and many more*<br>
+* I trained new team members on policies
+
 **What Drives Me:**
 * 
 * [Bullet point 2 related to your passion/profession]
