@@ -59,7 +59,7 @@ On a serious note, I do enjoy learning, problem solving, critical thinking, and 
 
 This website was created using [Github Pages](https://pages.github.com/) and [What a Theme](http://jekyllthemes.org/themes/what-a-theme/)<br>
 
-Here is the original concept I was going for:
-![original](https://i.imgur.com/GuAbWvU.png)
-![original](https://i.imgur.com/fN9AY1Z.png)
-![original](https://i.imgur.com/zp3wyWF.png)
+Here is the original concept I was going for:<br>
+![original](https://i.imgur.com/GuAbWvU.png)<br>
+![original](https://i.imgur.com/fN9AY1Z.png)<br>
+![original](https://i.imgur.com/zp3wyWF.png)<br>
