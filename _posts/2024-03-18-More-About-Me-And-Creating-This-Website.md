@@ -1,5 +1,5 @@
 ---
-title: About Me and Creating this Websie
+title: About Me and Creating this Website  
 layout: post
 # Add an image for your homelab here
 post-image: "https://i.imgur.com/gMhxAdW.jpg"
