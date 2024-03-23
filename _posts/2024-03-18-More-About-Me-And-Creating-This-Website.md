@@ -33,7 +33,7 @@ These are just a few highlights from working there, and I definitley learned a l
 
 ### Currently i'm contracted out to [Venable LLP](https://www.venable.com/) and came on as a Senior Tier 1 analyst:
 * Honestly, there is so much that I do here its really hard to talk about `EVERYTHING`
-* Having this opportunity though, i've been able to get experience in an Enterprise setting and get a chance to see and use a lot of different applications and how things operate in an IT environment
+* Having this opportunity though, i've been able to get experience in an Enterprise setting and get a chance to see and use a lot of different applications and how things operate in an IT environment.
 * Since I wear many hats, i've been able to use:<br>
 *Splunk*<br>
 *Okta Verify*<br>
@@ -47,34 +47,19 @@ These are just a few highlights from working there, and I definitley learned a l
 *Network Shares*<br>
 *Microsoft Office*<br>
 *and many more*<br>
-* I trained new team members on policies
+<br>
+* I help to train new team members on policies, procedures, SLA, ticketing best practices, escalation procedures, and overall asking for assistance.
+* We deal with on average ~250 emails / calls a day and some tickets require several days of troubleshooting due to schedules.
 
-**What Drives Me:**
-* 
-* [Bullet point 2 related to your passion/profession]
-* [Bullet point 3 related to your passion/profession]
+### What Drives Me:
+Learning. <br>
+On a serious note, I do enjoy learning, problem solving, critical thinking, and bashing my head at a problem until I get it to work. 
 
 ## Building This Website
 
-I'm excited to share my knowledge and experiences through this website! Here's a bit about the creation process:
+This website was created using [Github Pages](https://pages.github.com/) and [What a Theme](http://jekyllthemes.org/themes/what-a-theme/)<br>
 
-* **Technologies Used:** [List the main technologies used to build the website (e.g., HTML, CSS, JavaScript frameworks)]
-* **Challenges Faced:** [ Briefly mention any challenges you faced while building the website]
-* **Learning Experience:** [Describe what you learned while building the website]
-
-**What's Next:**
-
-* [Mention any future plans for the website or your online presence]
-
-**Feel free to reach out to me!** 
-
-* [Link to your social media profiles (optional)]
-* [Email address (optional)]
-
-
-**Note:** Replace the bracketed information with your details. You can further customize this outline by adding:
-
-* **Images:** Add an image of yourself or something relevant to your passions using:
-
-  ```markdown
-  Image description: Image URL
+Here is the original concept I was going for:
+![original](https://i.imgur.com/GuAbWvU.png)
+![original](https://i.imgur.com/fN9AY1Z.png)
+![original](https://i.imgur.com/zp3wyWF.png)
