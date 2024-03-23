@@ -42,7 +42,7 @@ These are just a few highlights from working there, and I definitley learned a l
 *Powershell for pulling Group Memberships*<br>
 *Citrix Workspace*<br>
 *Cisco Secure Mobility Client (VPN)<br>
-*iManage*<br>
+*IManage*<br>
 *Citrix Director*<br>
 *Network Shares*<br>
 *Microsoft Office*<br>
