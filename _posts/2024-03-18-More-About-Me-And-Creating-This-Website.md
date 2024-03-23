@@ -63,3 +63,9 @@ Here is the original concept I was going for:<br>
 ![original](https://i.imgur.com/GuAbWvU.png)<br>
 ![original](https://i.imgur.com/fN9AY1Z.png)<br>
 ![original](https://i.imgur.com/zp3wyWF.png)<br>
+<br>
+First, I absolutley love space, so I wanted to theme my website around space, stars, galaxies, anything related to that. <br>
+Up to the point of <u>this here line</u>, it has taken me a little over a week, getting everything to this point.<br>
+I definitely learned more about github with forking and branches. As well as what it takes to go into a website with themes, plugins, structure, coding, particles.js. (Originally was trying to have twinkling stars in the background) I am happy where this site is now, and being able to do blog posts about the things that i'm learning.<br>
+
+Thank you for taking the time to read this!!
