@@ -32,7 +32,7 @@ Welcome to my HomeLab project! Here, I leverage the power of Proxmox to create a
 
 ## Set Up and Proxmox Dashboard
 
-**[Image of your Proxmox Dashboard]**  This image showcases the Proxmox Dashboard, the central hub for managing virtual machines and containers within my HomeLab.  Below this image, you'll find a list of currently running VMs and Containers.
+**[ProxMox Dashboard](https://i.imgur.com/vMmtNNH.png)**  This image showcases the Proxmox Dashboard, the central hub for managing virtual machines and containers within my HomeLab.  Below this image, you'll find a list of currently running VMs and Containers.
 
 ## Virtual Machines
 
