@@ -14,7 +14,7 @@
   link: https://github.com/kyhomelab/SOC-Automation-Project/tree/main
   image: https://img.freepik.com/free-vector/cute-astronaut-sleeping-with-blanket-space-cartoon-vector-icon-illustration-science-technology-icon_138676-4483.jpg?w=1380&t=st=1710715581~exp=1710716181~hmac=3d6021ee2576c81e30c084c144922f00d964b661b06f23336ecd7bef688cea9b
   description: Goal is to create a Wazuh Instance with SOAR Integration along with case management using The Hive
-- name: In the Works
+- name: Malware Analysis
   link:
   image: 
   description: Coming Soon...
