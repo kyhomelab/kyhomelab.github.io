@@ -2,7 +2,7 @@
 title: 
 layout: post
 # Add an image for your homelab here
-post-image: "https://imgur.com/a/ac97F6J"
+post-image: "https://imgur.com/a/ac97F6J.jpg"
 description: This is a personal log for my daily learning at my new job.
 tags:
 - Learning
