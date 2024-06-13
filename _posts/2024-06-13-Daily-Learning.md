@@ -2,7 +2,7 @@
 title: 
 layout: post
 # Add an image for your homelab here
-post-image: "https://i.imgur.com/mnMRGcK.jpg"
+post-image: "https://imgur.com/a/ac97F6J"
 description: This is a personal log for my daily learning at my new job.
 tags:
 - Learning
@@ -35,3 +35,4 @@ This makes it possible to confirm that the data was not changed or tampered with
 ```bash
 Known as SHA2(256) it is the successor to SHA1 with a higher level of security
 [Storing passwords in their raw form is risky. SHA 256 and salt (a random value) are employed to securely hash passwords before storing them. When users log in, their entered password is hashed and compared to the stored hash, verifying authenticity without revealing the actual password. This shields sensitive information from potential breaches](https://medium.com/@madan_nv/a-deep-dive-into-sha-256-working-principles-and-applications-a38cccc390d4) 
+```
