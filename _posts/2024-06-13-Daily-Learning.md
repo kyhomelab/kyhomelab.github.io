@@ -19,6 +19,14 @@ First off, I got a new job as an IT Specialist at Smartlink Group. My responsibi
 * Crowdstrike
 * PhishER
 * Meraki Dashboard
+* Kace (for asset management)
+* BookStack (Internal Knowledgebase)
+
+#### June 17, 2024
+Today, did not do all too much.
+I sent out some laptops, took in some inventory, and got a nice sub from The Big Cheese.
+I took more look into using our Bookstack and even created a KB for provisioning a new laptop, from start to finish. 
+[Click Here](https://imgur.com/aIREPSz) if you want to see the first iteration of the KB I made. Trying to figure out some ways to make it look nice, kinda like my GitHub, but I think it gets the point across. 
 
 #### June 13, 2024
 Taking a look at PhishER for our reported phishing system, I wanted to look and try to learn a few things. I picked this email here, and wanted to dive into it and see what I can learn on the platform. You can probably see here that it is a very obvious phishing email.
