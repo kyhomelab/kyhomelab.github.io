@@ -29,14 +29,14 @@ Looking more into Crowdstrike, we got an alert through the Slack integration and
 [See the detection SC Here](https://imgur.com/a/8KRlB8P.jpg)
 
 First thing that I notice is the description:
-<br>
+
 > A file written to the file-system was classified as Adware/PUP based on its SHA256 hash.
 
 <br>
 So first, what is PUP?
-<br>
+
 > A PUP is a potentially unwanted program that is often installed when other software is installed on the computer. Typically, a PUP serves as a marketing tool and often modifies browser settings or displays unwanted advertisements. The most common form of PUP is adware.
-[source](https://usa.kaspersky.com/resource-center/definitions/what-is-pup-pua)
+> [source](https://usa.kaspersky.com/resource-center/definitions/what-is-pup-pua)
 
 <br>
 So, what is adware?
