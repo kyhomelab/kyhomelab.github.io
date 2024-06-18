@@ -25,12 +25,12 @@ First off, I got a new job as an IT Specialist at Smartlink Group. My responsibi
 #### June 18, 2024
 Looking more into Crowdstrike, we got an alert through the Slack integration and was pinged at 11:37pm June 17th. Im going to go through my though process of learning about this detection and seeing what information I can gather, as well as any actions I have taken.
 
-![See the detection SC Here](https://imgur.com/a/8KRlB8P)
+![See the detection SC Here](https://imgur.com/a/8KRlB8P.jpg)
 
 First thing that I notice is the description:
-```bash
-A file written to the file-system was classified as Adware/PUP based on its SHA256 hash.
-```
+<br>
+> A file written to the file-system was classified as Adware/PUP based on its SHA256 hash.
+
 <br>
 So first, what is PUP?
 ```bash
