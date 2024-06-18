@@ -47,12 +47,13 @@ So, what is adware?
 <br>
 The file that was quarantined was "f_00308a" with the file path "\AppData\Local\Google\Chrome\User Data\Profile 4\Cache\Cache_Data\f_00308a"
 Since it was quarantined there is no other action that needs be taken, since it was classified as a low threat, as well as automatically quarantined. If any new info comes up about this, i'll put it here.
+<br>
 ___
 
-I was assigned my first project today.
-I had pitched the idea 6/17 about the use of [Scribe](https://scribehow.com/)
-I was doing documentation on setting up new computers, and assigning them to someone. Our asset manager is online, and when documenting steps for how to, where to click, etc etc, I remembered an application called Scribe.
-Signed up for a new account, used the extension, and had showed my manager what it can do, and the usefulness of it.
+I was assigned my first project today.<br>
+I had pitched the idea 6/17 about the use of [Scribe](https://scribehow.com/)<br>
+I was doing documentation on setting up new computers, and assigning them to someone. Our asset manager is online, and when documenting steps for how to, where to click, etc etc, I remembered an application called Scribe.<br>
+Signed up for a new account, used the extension, and had showed my manager what it can do, and the usefulness of it.<br>
 
 He told me to create a task in Clickup, and now today, I'm tasked with reaching out to Sales and getting more information on the project. Here are the details of my first project:
 
