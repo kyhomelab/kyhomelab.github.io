@@ -36,6 +36,7 @@ First thing that I notice is the description:
 So first, what is PUP?
 
 > A PUP is a potentially unwanted program that is often installed when other software is installed on the computer. Typically, a PUP serves as a marketing tool and often modifies browser settings or displays unwanted advertisements. The most common form of PUP is adware.
+>
 > [source](https://usa.kaspersky.com/resource-center/definitions/what-is-pup-pua)
 
 <br>
