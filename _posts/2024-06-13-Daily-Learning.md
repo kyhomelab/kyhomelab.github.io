@@ -25,7 +25,7 @@ First off, I got a new job as an IT Specialist at Smartlink Group. My responsibi
 #### June 18, 2024
 Looking more into Crowdstrike, we got an alert through the Slack integration and was pinged at 11:37pm June 17th. Im going to go through my though process of learning about this detection and seeing what information I can gather, as well as any actions I have taken.
 
-![See the detection SC Here](https://imgur.com/a/8KRlB8P.jpg)
+[See the detection SC Here](https://imgur.com/a/8KRlB8P.jpg)
 
 First thing that I notice is the description:
 <br>
@@ -33,14 +33,14 @@ First thing that I notice is the description:
 
 <br>
 So first, what is PUP?
-```bash
-A PUP is a potentially unwanted program that is often installed when other software is installed on the computer. Typically, a PUP serves as a marketing tool and often modifies browser settings or displays unwanted advertisements. The most common form of PUP is adware.
+<br>
+> A PUP is a potentially unwanted program that is often installed when other software is installed on the computer. Typically, a PUP serves as a marketing tool and often modifies browser settings or displays unwanted advertisements. The most common form of PUP is adware.
 [source](https://usa.kaspersky.com/resource-center/definitions/what-is-pup-pua)
-```
+
 <br>
 So, what is adware?
-```bash
-A type of malware that displays unwanted advertisements on your computer or device. Adware is commonly activated unknowingly when users are trying to install legitimate applications that adware is bundled with.
+
+> A type of malware that displays unwanted advertisements on your computer or device. Adware is commonly activated unknowingly when users are trying to install legitimate applications that adware is bundled with.
 ```
 <br>
 The file that was quarantined was "f_00308a" with the file path "\AppData\Local\Google\Chrome\User Data\Profile 4\Cache\Cache_Data\f_00308a"
