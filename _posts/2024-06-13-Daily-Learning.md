@@ -41,7 +41,7 @@ So first, what is PUP?
 So, what is adware?
 
 > A type of malware that displays unwanted advertisements on your computer or device. Adware is commonly activated unknowingly when users are trying to install legitimate applications that adware is bundled with.
-```
+
 <br>
 The file that was quarantined was "f_00308a" with the file path "\AppData\Local\Google\Chrome\User Data\Profile 4\Cache\Cache_Data\f_00308a"
 Since it was quarantined there is no other action that needs be taken, since it was classified as a low threat, as well as automatically quarantined. If any new info comes up about this, i'll put it here.
