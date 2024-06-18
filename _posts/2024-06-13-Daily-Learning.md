@@ -1,5 +1,5 @@
 ---
-title: 
+title: Daily Learning Archive
 layout: post
 # Add an image for your homelab here
 post-image: "https://i.imgur.com/riNf4yT.png"
@@ -9,6 +9,7 @@ tags:
 - Applications
 - Networking
 - Journal
+- Cybersecurity
 ---
 
 ## The Purpose of this
