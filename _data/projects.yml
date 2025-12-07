@@ -14,8 +14,15 @@
   link: https://github.com/kyhomelab/SOC-Automation-Project/tree/main
   image: https://img.freepik.com/free-vector/cute-astronaut-sleeping-with-blanket-space-cartoon-vector-icon-illustration-science-technology-icon_138676-4483.jpg?w=1380&t=st=1710715581~exp=1710716181~hmac=3d6021ee2576c81e30c084c144922f00d964b661b06f23336ecd7bef688cea9b
   description: Goal is to create a Wazuh Instance with SOAR Integration along with case management using The Hive
+- name: Remotely Accessible Gemini CLI
+  link: https://github.com/kyhomelab/Gemini-CLI-VM
+  image: https://img.freepik.com/free-vector/cute-robot-working-with-laptop-cartoon-vector-icon-illustration-science-technology-icon-isolated_138676-5921.jpg?w=1380&t=st=1711319331~exp=1711319931~hmac=7e3d8c1c4f4b9b6b9b3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e
+  description: A secure, remotely accessible, and personalized Gemini CLI environment, hosted in a virtual machine, designed for portfolio building, technical write-ups, and research.
 - name: Malware Analysis
   link:
   image: 
   description: Coming Soon...
+
+
+
 
