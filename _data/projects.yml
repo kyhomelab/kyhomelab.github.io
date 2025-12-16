@@ -6,6 +6,10 @@
   link: https://github.com/kyhomelab/SOC-Lab/tree/main
   image: https://img.freepik.com/free-vector/cute-astronaut-reading-book-moon-cartoon-vector-icon-illustration-technology-education-icon-concept-isolated-premium-vector-flat-cartoon-style_138676-4200.jpg?w=1380&t=st=1710714316~exp=1710714916~hmac=682aa39666228677b2594fc9a2b9ed5e72bab7cc836de9c6571b2f3764bc55ad
   description: This project offers a step-by-step guide to creating a SOC lab using Proxmox. Learn how to install essential security software like PfSense, Windows Server, and Sysmon. Simulate real-world scenarios with tools like BadBlood for Active Directory testing. 
+- name: Segmenting the Lab with OPNsense
+  link: /blog/segmenting-lab-opnsense
+  image: https://img.freepik.com/free-vector/cute-astronaut-flying-rocket-cartoon-vector-icon-illustration-science-technology-icon-isolated_138676-4767.jpg
+  description: Goal is to establish a secure, isolated SOC Lab environment using OPNsense as the edge gateway. The objective is to ensure the Lab network has internet access but is completely segmented from the existing Home network.
 - name: Failed RDP to IP Geolocation Information
   link: https://github.com/kyhomelab/Failed-RDP-to-IP-Geolocation-Information
   image: https://img.freepik.com/free-vector/cute-astronaut-backpacker-with-compass-cartoon-vector-icon-illustration-science-nature-isolated_138676-5039.jpg?w=1380&t=st=1710715386~exp=1710715986~hmac=d9c122f2ba924d973f86cbcbd1c2fb684b76fdac63e4697422d9c3185aba2054
@@ -22,7 +26,3 @@
   link:
   image: 
   description: Coming Soon...
-
-
-
-
