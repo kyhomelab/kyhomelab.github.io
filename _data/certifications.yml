@@ -1,0 +1,20 @@
+- name: CompTIA A+
+  issuer: CompTIA
+  date: June 2021
+  icon: fa-laptop
+  color: is-danger
+  description: Foundational IT certification covering hardware, networking, mobile devices, and troubleshooting
+
+- name: CompTIA Security+
+  issuer: CompTIA
+  date: 2021
+  icon: fa-shield-alt
+  color: is-success
+  description: Industry-standard security certification covering network security, compliance, threats, and cryptography
+
+- name: Azure Administrator Associate
+  issuer: Microsoft
+  date: 2023
+  icon: fa-cloud
+  color: is-info
+  description: Microsoft Azure cloud administration certification covering identity, governance, storage, and compute resources

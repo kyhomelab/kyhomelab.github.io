@@ -1,27 +1,27 @@
 - name: Creating a Homelab
-  image: https://img.freepik.com/free-vector/cute-astronaut-working-laptop-space-cartoon-vector-icon-illustration-science-technology-icon_138676-6019.jpg?w=1380&t=st=1710645392~exp=1710645992~hmac=ddc209670477a5f7a386b3ddab0c92141d6a407c5af37dca683e304e12063a29
+  image: /assets/images/project-homelab-astronaut-laptop.jpg
   link: https://github.com/kyhomelab/HomeLab/tree/main
   description: Virtual Playground - Exploring the Frontiers of Tech in My HomeLab
 - name: Setting up an SOC Lab
   link: https://github.com/kyhomelab/SOC-Lab/tree/main
-  image: https://img.freepik.com/free-vector/cute-astronaut-reading-book-moon-cartoon-vector-icon-illustration-technology-education-icon-concept-isolated-premium-vector-flat-cartoon-style_138676-4200.jpg?w=1380&t=st=1710714316~exp=1710714916~hmac=682aa39666228677b2594fc9a2b9ed5e72bab7cc836de9c6571b2f3764bc55ad
-  description: This project offers a step-by-step guide to creating a SOC lab using Proxmox. Learn how to install essential security software like PfSense, Windows Server, and Sysmon. Simulate real-world scenarios with tools like BadBlood for Active Directory testing. 
+  image: /assets/images/project-soc-astronaut-reading.jpg
+  description: This project offers a step-by-step guide to creating a SOC lab using Proxmox. Learn how to install essential security software like PfSense, Windows Server, and Sysmon. Simulate real-world scenarios with tools like BadBlood for Active Directory testing.
 - name: Failed RDP to IP Geolocation Information
   link: https://github.com/kyhomelab/Failed-RDP-to-IP-Geolocation-Information
-  image: https://img.freepik.com/free-vector/cute-astronaut-backpacker-with-compass-cartoon-vector-icon-illustration-science-nature-isolated_138676-5039.jpg?w=1380&t=st=1710715386~exp=1710715986~hmac=d9c122f2ba924d973f86cbcbd1c2fb684b76fdac63e4697422d9c3185aba2054
+  image: /assets/images/project-rdp-astronaut-compass.jpg
   description: This project is designed to analyze and log failed Remote Desktop Protocol (RDP) connection attempts, providing geolocation information for the associated IP addresses.
 - name: SOC Automation Project
   link: https://github.com/kyhomelab/SOC-Automation-Project/tree/main
-  image: https://img.freepik.com/free-vector/cute-astronaut-sleeping-with-blanket-space-cartoon-vector-icon-illustration-science-technology-icon_138676-4483.jpg?w=1380&t=st=1710715581~exp=1710716181~hmac=3d6021ee2576c81e30c084c144922f00d964b661b06f23336ecd7bef688cea9b
+  image: /assets/images/project-soc-automation-astronaut-sleeping.jpg
   description: Goal is to create a Wazuh Instance with SOAR Integration along with case management using The Hive
 - name: Remotely Accessible Gemini CLI
   link: https://github.com/kyhomelab/Gemini-CLI-VM
-  image: https://img.freepik.com/free-vector/cute-robot-working-with-laptop-cartoon-vector-icon-illustration-science-technology-icon-isolated_138676-5921.jpg?w=1380&t=st=1711319331~exp=1711319931~hmac=7e3d8c1c4f4b9b6b9b3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e3e
+  image: /assets/images/project-gemini-robot-laptop.jpg
   description: A secure, remotely accessible, and personalized Gemini CLI environment, hosted in a virtual machine, designed for portfolio building, technical write-ups, and research.
-- name: Malware Analysis
-  link:
-  image: 
-  description: Coming Soon...
+- name: Malware Analysis Lab
+  link: https://github.com/kyhomelab
+  image: /assets/images/project-malware-analysis-astronaut.jpg
+  description: A dedicated isolated environment for safely analyzing malicious software, understanding attack vectors, and developing detection signatures. Equipped with REMnux, FLARE VM, and industry-standard analysis tools.
 
 
 

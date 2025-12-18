@@ -1,0 +1,25 @@
+<section class="hero is-fullheight has-text-centered" id="certifications">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title is-1 has-text-weight-bold">Certifications</h1>
+            <h2 class="subtitle">Professional credentials and achievements</h2>
+            <br>
+            <div class="columns is-multiline is-centered">
+                {% for certification in site.data.certifications %}
+                <div class="column is-one-third">
+                    <div class="box">
+                        <div class="content">
+                            <div class="icon is-large {{certification.color}}">
+                                <i class="fas {{certification.icon}} fa-3x"></i>
+                            </div>
+                            <h3 class="title is-4">{{certification.name}}</h3>
+                            <p class="subtitle is-6 has-text-grey">{{certification.issuer}} | {{certification.date}}</p>
+                            <p>{{certification.description}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

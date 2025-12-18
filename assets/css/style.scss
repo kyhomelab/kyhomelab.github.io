@@ -353,3 +353,45 @@ a.navbar-item.is-active {
         }
     }
 }
+
+#certifications {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+
+    .title {
+        color: white;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .subtitle {
+        color: #e0e0e0;
+    }
+
+    .box {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 1rem;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+
+        &:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+    }
+
+    .icon {
+        margin-bottom: 1rem;
+
+        &.is-danger i {
+            color: #e74c3c;
+        }
+
+        &.is-success i {
+            color: #2ecc71;
+        }
+
+        &.is-info i {
+            color: #3498db;
+        }
+    }
+}
