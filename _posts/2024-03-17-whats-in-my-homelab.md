@@ -1,7 +1,6 @@
 ---
-title: 
+title: What's in My HomeLab
 layout: post
-# Add an image for your homelab here
 post-image: "https://i.imgur.com/mnMRGcK.jpg"
 description: A detailed look into my HomeLab environment for learning and experimentation.
 tags:

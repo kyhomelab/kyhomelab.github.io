@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Segmenting the Lab with OPNsense"
+post-image: https://img.freepik.com/free-vector/cute-astronaut-flying-rocket-cartoon-vector-icon-illustration-science-technology-icon-isolated_138676-4767.jpg
 date: 2025-12-16
 description: "Establishing a secure, isolated SOC Lab environment using OPNsense as the edge gateway."
 tags: [opnsense, homelab, security, network]
