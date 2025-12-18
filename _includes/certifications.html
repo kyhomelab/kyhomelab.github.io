@@ -8,15 +8,13 @@
             <div class="columns is-multiline is-centered">
                 {% for certification in site.data.certifications %}
                 <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-                    <div class="box">
-                        <div class="content">
-                            <div class="icon is-large {{certification.color}}" aria-hidden="true">
-                                <i class="fas {{certification.icon}} fa-3x"></i>
-                            </div>
-                            <h3 class="title is-4">{{certification.name}}</h3>
-                            <p class="subtitle is-6 has-text-grey">{{certification.issuer}} | {{certification.date}}</p>
-                            <p>{{certification.description}}</p>
+                    <div class="box certification-card">
+                        <div class="cert-icon {{certification.color}}" aria-hidden="true">
+                            <i class="fas {{certification.icon}} fa-3x"></i>
                         </div>
+                        <h3 class="cert-title">{{certification.name}}</h3>
+                        <p class="cert-meta">{{certification.issuer}} | {{certification.date}}</p>
+                        <p class="cert-description">{{certification.description}}</p>
                     </div>
                 </div>
                 {% endfor %}
