@@ -167,7 +167,8 @@ a.navbar-item.is-active {
             0 0 30px rgba(0, 212, 255, 0.3),
             0 0 40px rgba(107, 76, 230, 0.2);
         animation: fadeInDown 1s ease-out;
-        letter-spacing: 4px;
+        font-size: clamp(1.5rem, 8vw, 3rem) !important;
+        letter-spacing: clamp(0px, 1vw, 4px) !important;
         font-weight: 900;
     }
 
@@ -175,7 +176,8 @@ a.navbar-item.is-active {
         color: rgba(255, 255, 255, 0.9);
         text-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
         animation: fadeInUp 1s ease-out 0.3s both;
-        letter-spacing: 0.3rem;
+        font-size: clamp(0.75rem, 3vw, 1.25rem) !important;
+        letter-spacing: clamp(0px, 0.5vw, 0.3rem) !important;
         font-weight: 300;
     }
 
