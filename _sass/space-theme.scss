@@ -1,0 +1,307 @@
+// ============================================
+// SPACE THEME - DIGITAL COSMOS EXPLORER
+// ============================================
+
+// CSS Custom Properties for Space Theme
+:root {
+  // Color Palette
+  --space-dark-primary: #0a0e27;
+  --space-dark-secondary: #1a1d3a;
+  --space-dark-tertiary: #12152e;
+  --nebula-purple: #6b4ce6;
+  --nebula-purple-light: #8b6cff;
+  --cosmic-cyan: #00d4ff;
+  --cosmic-cyan-light: #4de8ff;
+  --supernova-pink: #ff006e;
+  --supernova-pink-light: #ff4d9e;
+  --star-white: #ffffff;
+  --star-blue: #b8d4ff;
+  --star-gold: #ffd700;
+
+  // Gradients
+  --nebula-gradient: linear-gradient(135deg,
+    var(--nebula-purple) 0%,
+    var(--supernova-pink) 50%,
+    var(--cosmic-cyan) 100%);
+
+  --cosmic-gradient: linear-gradient(180deg,
+    var(--space-dark-primary) 0%,
+    var(--space-dark-secondary) 50%,
+    var(--space-dark-tertiary) 100%);
+
+  --glass-gradient: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%);
+
+  // Shadows and Glows
+  --glow-purple: 0 0 20px rgba(107, 76, 230, 0.5);
+  --glow-cyan: 0 0 20px rgba(0, 212, 255, 0.5);
+  --glow-pink: 0 0 20px rgba(255, 0, 110, 0.5);
+  --glow-white: 0 0 30px rgba(255, 255, 255, 0.3);
+
+  --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow-strong: 0 16px 48px rgba(0, 0, 0, 0.5);
+
+  // Glass-morphism
+  --glass-bg: rgba(26, 29, 58, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-blur: blur(12px);
+}
+
+// ============================================
+// GLOBAL SPACE STYLES
+// ============================================
+
+body {
+  background-color: var(--space-dark-primary);
+  background-image: radial-gradient(circle at 20% 50%, rgba(107, 76, 230, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 40% 20%, rgba(255, 0, 110, 0.05) 0%, transparent 50%);
+  color: var(--star-white);
+  overflow-x: hidden;
+  position: relative;
+}
+
+// Selection styling
+::selection {
+  background: var(--nebula-purple);
+  color: var(--star-white);
+}
+
+::-moz-selection {
+  background: var(--nebula-purple);
+  color: var(--star-white);
+}
+
+// Scrollbar styling
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--space-dark-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--nebula-purple), var(--cosmic-cyan));
+  border-radius: 10px;
+
+  &:hover {
+    background: linear-gradient(180deg, var(--nebula-purple-light), var(--cosmic-cyan-light));
+  }
+}
+
+// ============================================
+// GLASS-MORPHISM UTILITY CLASSES
+// ============================================
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: var(--shadow-strong), var(--glow-purple);
+    transform: translateY(-5px);
+  }
+}
+
+.glass-navbar {
+  background: rgba(10, 14, 39, 0.8);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+// ============================================
+// COSMIC GLOW EFFECTS
+// ============================================
+
+.cosmic-glow {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: var(--nebula-gradient);
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    filter: blur(8px);
+  }
+
+  &:hover::before {
+    opacity: 0.7;
+  }
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+               0 0 20px rgba(107, 76, 230, 0.3),
+               0 0 30px rgba(0, 212, 255, 0.2);
+}
+
+.text-glow-purple {
+  text-shadow: 0 0 10px rgba(107, 76, 230, 0.8),
+               0 0 20px rgba(107, 76, 230, 0.5);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.8),
+               0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+// ============================================
+// GRADIENT TEXT
+// ============================================
+
+.gradient-text {
+  background: var(--nebula-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+// ============================================
+// COSMIC BUTTONS
+// ============================================
+
+.cosmic-button {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 2px solid var(--nebula-purple);
+  border-radius: 50px;
+  color: var(--star-white);
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--nebula-gradient);
+    transition: left 0.3s ease;
+    z-index: -1;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--glow-purple);
+    border-color: var(--cosmic-cyan);
+
+    &::before {
+      left: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px);
+  }
+}
+
+// ============================================
+// ORBITAL ELEMENTS
+// ============================================
+
+.orbital-ring {
+  position: absolute;
+  border: 2px solid rgba(107, 76, 230, 0.3);
+  border-radius: 50%;
+  animation: rotate-orbit 20s linear infinite;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--cosmic-cyan);
+    border-radius: 50%;
+    box-shadow: var(--glow-cyan);
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+// ============================================
+// FLOATING ANIMATION
+// ============================================
+
+.float-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+.float-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+.float-fast {
+  animation: float 4s ease-in-out infinite;
+}
+
+// ============================================
+// PULSE ANIMATION
+// ============================================
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+// ============================================
+// SECTION SPACING
+// ============================================
+
+.space-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 4rem 1.5rem;
+}
+
+// ============================================
+// RESPONSIVE UTILITIES
+// ============================================
+
+@media (max-width: 768px) {
+  .space-section {
+    min-height: auto;
+    padding: 3rem 1rem;
+  }
+
+  .glass-card {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+}
+
+// Reduce motion for accessibility
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
