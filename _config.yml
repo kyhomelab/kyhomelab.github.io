@@ -44,8 +44,8 @@ disqus-shortname: thedevslot
 author-name: Kyle S
 # URL for the Image of the Author
 author-image: /assets/images/author-astronaut-hacker.jpg
-# 60 Words About the Author
-author-about: Kyle Stanley, an IT enthusiast who thrives on untangling technical knots. With a customer-centric approach honed through helpdesk and system administration, I ensure users stay productive while I tackle challenges head-on. My passion for learning fuels my expertise (CompTIA A+, Security+, Azure Administrator Associate), and I'm eager to leverage it for your success. Let's connect!
+# About the Author
+author-about: Security Operations Analyst with hands-on experience in Microsoft Sentinel, threat hunting, and incident response. Currently protecting enterprise environments through proactive security monitoring, custom KQL detection engineering, and Azure security assessments. Built an advanced home lab featuring 15+ integrated security tools including Wazuh SIEM, Suricata IDS, and automated SOAR workflows. Architected a hybrid Azure honeypot that collects real-world threat intelligence and publishes community IOC feeds. Holds CompTIA Security+, Azure Administrator (AZ-104), and CompTIA A+ certifications—actively pursuing Microsoft SC-200. Passionate about turning security theory into production-ready detections, documented playbooks, and measurable risk reduction.
 # URL to the Author's Profile (i.e., Github, Twitter, Stackoverflow, etc)
 author-url: https://github.com/kyhomelab
 
