@@ -500,6 +500,32 @@ a.navbar-item.is-active {
         border: none;
         box-shadow: 0 0 10px rgba(107, 76, 230, 0.5);
     }
+
+    // Social badges styling
+    .social-badges {
+        .badge-link {
+            display: inline-block;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+
+            &:hover {
+                transform: translateY(-5px) scale(1.05);
+                filter: drop-shadow(0 8px 16px rgba(107, 76, 230, 0.6))
+                        drop-shadow(0 0 20px rgba(0, 212, 255, 0.4));
+            }
+
+            img {
+                display: block;
+                border-radius: 4px;
+                transition: all 0.3s ease;
+            }
+
+            &:hover img {
+                box-shadow: 0 0 20px rgba(107, 76, 230, 0.8),
+                            0 0 40px rgba(0, 212, 255, 0.5);
+            }
+        }
+    }
 }
 
 #blog {
