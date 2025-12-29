@@ -25,21 +25,11 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        font-size: 1.5rem !important;
+        font-size: clamp(0.65rem, 4vw, 1.5rem) !important;
         font-weight: 800;
-        letter-spacing: 2px;
+        letter-spacing: clamp(0px, 0.5vw, 2px) !important;
         text-shadow: 0 0 20px rgba(107, 76, 230, 0.5);
         white-space: nowrap !important;
-
-        @media (max-width: 768px) {
-            font-size: 0.9rem !important;
-            letter-spacing: 0px !important;
-        }
-
-        @media (max-width: 480px) {
-            font-size: 0.75rem !important;
-            letter-spacing: 0px !important;
-        }
     }
 
     .navbar-brand .navbar-item {
@@ -943,18 +933,9 @@ a.navbar-item.is-active {
             0 0 20px rgba(107, 76, 230, 0.8),
             0 0 40px rgba(0, 212, 255, 0.5);
         font-weight: 800;
-        letter-spacing: 3px;
+        font-size: clamp(1.25rem, 5vw, 3rem) !important;
+        letter-spacing: clamp(0px, 0.5vw, 3px) !important;
         animation: fadeInDown 0.8s ease-out;
-
-        @media (max-width: 768px) {
-            font-size: 1.5rem !important;
-            letter-spacing: 0px !important;
-        }
-
-        @media (max-width: 480px) {
-            font-size: 1.25rem !important;
-            letter-spacing: 0px !important;
-        }
     }
 
     > .hero-body > .container > .subtitle {
