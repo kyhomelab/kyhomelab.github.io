@@ -19,20 +19,33 @@
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 0 30px rgba(107, 76, 230, 0.2);
     }
 
+    .navbar-brand .navbar-item strong,
     .navbar-brand strong {
         background: linear-gradient(135deg, var(--nebula-purple), var(--cosmic-cyan));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        font-size: 1.5rem;
+        font-size: 1.5rem !important;
         font-weight: 800;
         letter-spacing: 2px;
         text-shadow: 0 0 20px rgba(107, 76, 230, 0.5);
-        white-space: nowrap;
+        white-space: nowrap !important;
 
         @media (max-width: 768px) {
-            font-size: 1.2rem;
-            letter-spacing: 1px;
+            font-size: 0.9rem !important;
+            letter-spacing: 0px !important;
+        }
+
+        @media (max-width: 480px) {
+            font-size: 0.75rem !important;
+            letter-spacing: 0px !important;
+        }
+    }
+
+    .navbar-brand .navbar-item {
+        @media (max-width: 768px) {
+            padding-left: 0.5rem !important;
+            padding-right: 0.5rem !important;
         }
     }
 }
@@ -934,8 +947,13 @@ a.navbar-item.is-active {
         animation: fadeInDown 0.8s ease-out;
 
         @media (max-width: 768px) {
-            font-size: 2rem;
-            letter-spacing: 1px;
+            font-size: 1.5rem !important;
+            letter-spacing: 0px !important;
+        }
+
+        @media (max-width: 480px) {
+            font-size: 1.25rem !important;
+            letter-spacing: 0px !important;
         }
     }
 
