@@ -9,11 +9,14 @@
             </a>
             {% endif %}
             {% if site.email %}
-            <a id="contact-button" href="mailto:{{site.email}}"
-                class="button is-rounded is-uppercase has-text-weight-normal is-outlined has-text-weight-semibold column is-two-fifths cosmic-button"
-                target="_blank">
-                <i class="fas fa-envelope"></i>Send me an Email
-            </a>
+            <div style="display: flex; justify-content: center; margin: 2rem 0;">
+                <a id="contact-button" href="mailto:{{site.email}}"
+                    class="button is-rounded is-uppercase has-text-weight-normal is-outlined has-text-weight-semibold cosmic-button"
+                    style="min-width: 300px; max-width: 400px;"
+                    target="_blank">
+                    <i class="fas fa-envelope"></i>Send me an Email
+                </a>
+            </div>
             {% endif %}
             {% if site.twitter_username %}
             <a id="contact-button" href="https://www.twitter.com/intent/tweet?screen_name={{site.twitter_username}}"
