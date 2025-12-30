@@ -313,6 +313,7 @@ a.navbar-item.is-active {
             transform: translate(-50%, -50%);
             animation: rotate-orbit 20s linear infinite;
             z-index: 1;
+            pointer-events: none;
         }
 
         &::after {
@@ -327,6 +328,7 @@ a.navbar-item.is-active {
             transform: translate(-50%, -50%);
             animation: rotate-orbit 30s linear infinite reverse;
             z-index: 1;
+            pointer-events: none;
         }
     }
 
@@ -354,6 +356,7 @@ a.navbar-item.is-active {
         box-shadow: 0 4px 15px rgba(107, 76, 230, 0.3);
         position: relative;
         overflow: hidden;
+        z-index: 10;
 
         &::before {
             content: '';
@@ -366,6 +369,7 @@ a.navbar-item.is-active {
             border-radius: 50%;
             transform: translate(-50%, -50%);
             transition: width 0.5s ease, height 0.5s ease;
+            pointer-events: none;
         }
 
         &:hover {
