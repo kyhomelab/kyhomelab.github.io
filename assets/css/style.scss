@@ -988,10 +988,15 @@ a.navbar-item.is-active {
         blockquote {
             display: block;
             border-left: 4px solid var(--nebula-purple);
-            padding-left: 1.5rem;
+            padding: 1rem 1.5rem;
             margin: 1.5rem 0;
             font-style: italic;
-            opacity: 0.9;
+            background: rgba(107, 76, 230, 0.1) !important;
+            border-radius: 0.25rem;
+
+            p, span, a, strong, em, * {
+                color: rgba(255, 255, 255, 0.95) !important;
+            }
         }
 
         hr {
