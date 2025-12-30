@@ -444,8 +444,9 @@ a.navbar-item.is-active {
         margin: 0.5rem auto;
         display: flex;
         justify-content: center;
-        flex-wrap: wrap;
+        align-items: center;
         gap: 1rem;
+        line-height: 1;
     }
 
     svg {
