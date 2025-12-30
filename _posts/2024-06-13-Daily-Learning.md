@@ -95,3 +95,219 @@ SHA-1 or Secure Hash Algorithm 1 is a cryptographic algorithm which takes an inp
 SHA1 has been considered insecure since 2005. Known as SHA2(256), it is the successor to SHA1 with a higher level of security. Storing passwords in their raw form is risky. SHA 256 and salt (a random value) are employed to securely hash passwords before storing them. When users log in, their entered password is hashed and compared to the stored hash, verifying authenticity without revealing the actual password. This shields sensitive information from potential breaches.
 
 [Learn more about SHA-256](https://medium.com/@madan_nv/a-deep-dive-into-sha-256-working-principles-and-applications-a38cccc390d4)
+
+---
+
+## December 28, 2024
+
+**Topic: STIX 2.1 Threat Intelligence Format**
+
+Learned about STIX (Structured Threat Information Expression) 2.1 today - the standardized format for sharing threat intelligence. Key objects include Indicator, Malware, ThreatActor, and AttackPattern. Relationships connect these objects to show context. Understanding STIX is crucial for consuming and sharing IOCs across platforms.
+
+---
+
+## December 15, 2024
+
+**Topic: Logic Apps vs Azure Functions**
+
+Studied the differences between Azure Logic Apps and Azure Functions for Sentinel automation. Logic Apps are low-code, GUI-based workflows - great for simple orchestration. Azure Functions require code but offer more flexibility and better performance for complex logic. Use Logic Apps for SOC playbooks, Functions for custom data processing.
+
+---
+
+## December 3, 2024
+
+**Topic: MITRE ATT&CK Tactics vs Techniques**
+
+Reviewed the structure of the MITRE ATT&CK framework. Tactics are the "why" - objectives like Initial Access, Persistence, Privilege Escalation. Techniques are the "how" - specific methods attackers use. Sub-techniques provide more granularity. Understanding this hierarchy helps organize detection rules and assess security coverage.
+
+---
+
+## November 22, 2024
+
+**Topic: KQL Query Performance Best Practices**
+
+Learned key KQL optimization principles: filter early with `where`, use `summarize` instead of iterating, avoid wildcard searches when possible. The query execution order matters - parsers run before filters, so use native fields when you can. Understanding how KQL processes data helps write faster, more efficient queries.
+
+---
+
+## November 10, 2024
+
+**Topic: Suricata vs Snort IDS**
+
+Compared Suricata and Snort intrusion detection systems. Both use signature-based detection, but Suricata offers multi-threading (better performance), native IPv6 support, and protocol detection regardless of port. Suricata also does file extraction and has better Lua scripting capabilities. Both are open-source and widely used.
+
+---
+
+## October 28, 2024
+
+**Topic: Active Directory Tier Model**
+
+Studied the AD administrative tier model for security. Tier 0 = domain controllers, enterprise admins. Tier 1 = servers and server admins. Tier 2 = workstations and end-user admins. The key principle: credentials should never flow from lower tiers to higher tiers. This prevents credential theft from workstations leading to domain compromise.
+
+---
+
+## October 15, 2024
+
+**Topic: Authentication Log Event IDs**
+
+Memorized key Windows authentication event IDs for log analysis. 4624 = successful logon, 4625 = failed logon, 4768 = Kerberos TGT requested, 4769 = Kerberos service ticket requested, 4776 = NTLM authentication. Knowing these by heart speeds up incident investigation significantly.
+
+---
+
+## October 2, 2024
+
+**Topic: Python Pandas DataFrames**
+
+Learning pandas for log analysis and security data processing. DataFrames are like spreadsheets in Python - columns, rows, indexing. Key operations: `read_csv()`, `groupby()`, `merge()`, and `apply()`. Pandas makes it easy to correlate data from different sources and find patterns in large datasets.
+
+---
+
+## September 19, 2024
+
+**Topic: Kerberoasting Attack Technique**
+
+Deep dive into Kerberoasting today. Attackers request TGS tickets for SPNs, then crack the tickets offline to recover service account passwords. Detection: look for RC4 encryption (0x17) in event 4769, or unusual volume of TGS requests. Prevention: strong passwords for service accounts, use gMSAs, monitor for offline cracking attempts.
+
+---
+
+## September 5, 2024
+
+**Topic: Cipher Modes - CBC vs GCM**
+
+Studied symmetric encryption cipher modes for Security+. CBC (Cipher Block Chaining) requires an IV and can be vulnerable to padding oracle attacks. GCM (Galois/Counter Mode) provides both encryption and authentication, making it more secure for modern applications. AES-GCM is the recommended standard for most use cases.
+
+---
+
+## August 23, 2024
+
+**Topic: PowerShell Error Handling**
+
+Learned proper error handling in PowerShell using Try/Catch/Finally blocks. Terminating errors stop execution and can be caught. Non-terminating errors continue running - use `-ErrorAction Stop` to make them terminating. The `$Error` automatic variable stores all errors from the current session.
+
+---
+
+## August 10, 2024
+
+**Topic: Azure NSG Default Rules**
+
+Studied Azure NSG default security rules. Three inbound defaults: allow VNet traffic, allow Azure Load Balancer, deny all else. Three outbound: allow VNet traffic, allow internet, deny all else. You can't delete these, but you can override with higher priority (lower number) custom rules.
+
+---
+
+## July 28, 2024
+
+**Topic: Wazuh Rule Levels and Frequency**
+
+Learned about Wazuh rule severity levels (0-15) and how to use frequency/timeframe for alert aggregation. Level 0-4 = informational, 5-7 = notification, 8-11 = important, 12-15 = critical. The `<frequency>` tag with `<timeframe>` lets you detect repeated events - useful for brute force detection.
+
+---
+
+## July 15, 2024
+
+**Topic: Honeypot Types - Low vs High Interaction**
+
+Studied honeypot classification. Low-interaction honeypots emulate services but don't allow deep attacker engagement - safer and easier to maintain. High-interaction honeypots are full systems that let attackers fully compromise them - riskier but provide better intelligence on TTPs. Medium-interaction is a balance between the two.
+
+---
+
+## July 3, 2024
+
+**Topic: NIST Incident Response Lifecycle**
+
+Reviewed the NIST 800-61 incident response framework: Preparation, Detection & Analysis, Containment/Eradication/Recovery, Post-Incident Activity. The key is that it's a cycle - lessons learned feed back into preparation. Most organizations fail at documentation and post-incident review.
+
+---
+
+## June 25, 2024
+
+**Topic: ATT&CK Navigator Heat Maps**
+
+The MITRE ATT&CK Navigator uses color-coded matrices to visualize security coverage. You can layer multiple datasets - detection rules, red team tests, threat intel - to identify gaps. Export to JSON or Excel for reporting. Understanding coverage gaps helps prioritize security investments.
+
+---
+
+## May 20, 2024
+
+**Topic: Azure RBAC Scopes**
+
+Azure RBAC works at four scope levels: Management Group > Subscription > Resource Group > Resource. Permissions are inherited down the hierarchy. Assign roles at the highest level that makes sense - subscription for broad access, resource group for project teams, resource for specific exceptions.
+
+---
+
+## May 8, 2024
+
+**Topic: Firewall Rule Best Practices**
+
+Studied firewall rule management principles: deny by default, document every rule with owner and business justification, review rules quarterly, remove unused rules, use groups instead of individual IPs, log denies for troubleshooting. Most breaches involve misconfigured or forgotten firewall rules.
+
+---
+
+## April 22, 2024
+
+**Topic: TCP Three-Way Handshake**
+
+Reviewed TCP handshake for packet analysis. Client sends SYN, server responds with SYN-ACK, client acknowledges with ACK. SYN flood attacks send SYN packets without completing the handshake, exhausting server resources. Wireshark filter: `tcp.flags.syn==1 && tcp.flags.ack==0` shows SYN packets.
+
+---
+
+## April 10, 2024
+
+**Topic: Threat Actor Attribution**
+
+Learned about threat actor classification for Security+. Nation-state actors (APTs) have significant resources and long-term objectives. Cybercriminals are financially motivated. Hacktivists pursue ideological goals. Script kiddies use existing tools without deep understanding. Insider threats have legitimate access but malicious intent.
+
+---
+
+## March 25, 2024
+
+**Topic: KQL Join Kinds**
+
+Studied KQL join flavors: `innerunique` (default, deduplicates left side), `inner` (keeps all matches), `leftouter` (all left records, nulls for unmatched right), `leftanti` (records in left NOT in right). Most Sentinel hunting queries use `innerunique` to correlate events without duplicates.
+
+---
+
+## March 12, 2024
+
+**Topic: Zeek Network Analysis**
+
+Learned about Zeek (formerly Bro) for network security monitoring. Unlike signature-based IDS, Zeek focuses on logging network activity and protocol analysis. It extracts metadata, files, and can detect behavioral anomalies. Great for threat hunting and understanding normal network baselines.
+
+---
+
+## February 28, 2024
+
+**Topic: PowerShell Filtering Syntax**
+
+Studied PowerShell filter syntax. Server-side filtering with `-Filter` is fastest (query runs on DC). Client-side with `Where-Object` fetches everything then filters locally. For AD queries, always use `-Filter` when possible. Example: `Get-ADUser -Filter {Enabled -eq $false}` is much faster than piping to `Where-Object`.
+
+---
+
+## February 14, 2024
+
+**Topic: Log Analytics Agent vs AMA**
+
+Learned the difference between the legacy Log Analytics Agent (MMA) and the new Azure Monitor Agent (AMA). AMA offers better performance, DCR-based configuration, and multi-homing. Microsoft is deprecating MMA in August 2024, so migrating to AMA is important for Sentinel data collection.
+
+---
+
+## February 1, 2024
+
+**Topic: PE File Structure**
+
+Studied portable executable (PE) file format for malware analysis. Key sections: DOS header, PE header, sections (.text for code, .data for variables, .rsrc for resources). Packers compress/encrypt sections - detectable by high entropy values. Understanding PE structure helps identify suspicious executables.
+
+---
+
+## January 18, 2024
+
+**Topic: Defense in Depth Principle**
+
+Reviewed defense in depth security strategy. No single control is perfect - layer multiple defensive controls so if one fails, others still protect. Physical security, network security, endpoint security, application security, data security. The goal is to increase attacker cost and create multiple detection opportunities.
+
+---
+
+## January 5, 2024
+
+**Topic: Docker Bridge Networks**
+
+Learned about Docker networking modes. Bridge networks provide network isolation between containers. Containers on the same bridge can communicate, but are isolated from other bridges. User-defined bridges are better than the default - they provide automatic DNS resolution and better isolation control.
