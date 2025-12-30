@@ -869,48 +869,93 @@ a.navbar-item.is-active {
 }
 
 #post {
+    background: linear-gradient(180deg,
+        var(--space-dark-primary) 0%,
+        var(--space-dark-secondary) 100%);
+    position: relative;
+
     @media (min-width: 768px) {
         margin: auto 2.5vmax;
     }
     a {
         text-decoration: underline;
+        color: var(--cosmic-cyan);
     }
     #title {
         text-decoration: none;
+        color: white !important;
     }
     .title {
         margin: auto;
+        color: white !important;
+        text-shadow:
+            0 0 20px rgba(0, 212, 255, 0.6),
+            0 0 40px rgba(107, 76, 230, 0.4);
     }
     #post-image {
         border-radius: 0.25rem;
+        border: 2px solid var(--nebula-purple);
+        box-shadow: 0 0 20px rgba(107, 76, 230, 0.5);
     }
     .subtitle {
         letter-spacing: 0.05rem;
+        color: rgba(255, 255, 255, 0.9) !important;
     }
 
     #description {
         margin-bottom: 1.25vmax;
+        color: var(--cosmic-cyan) !important;
     }
 
     .tag {
         margin: 0.15rem auto;
     }
     .content {
+        color: rgba(255, 255, 255, 0.9) !important;
+
+        p, li, blockquote, span, div {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: white !important;
+            text-shadow: 0 0 10px rgba(107, 76, 230, 0.5);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
         ol, ul, blockquote {
             display: inline-block;
         }
         hr{
-            background-color: grey;
+            background-color: var(--nebula-purple);
+            opacity: 0.3;
         }
         img, iframe {
             max-width: calc(100% - 25vw);
             margin: 0.25rem auto;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(107, 76, 230, 0.3);
             @media (max-width: 768px) {
                 max-width: calc(100% - 5vw);
             }
         }
         ul, ol {
             display: inline-block;
+        }
+
+        code {
+            background: rgba(26, 29, 58, 0.6);
+            color: var(--cosmic-cyan);
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+        }
+
+        pre {
+            background: rgba(26, 29, 58, 0.8);
+            border: 1px solid var(--nebula-purple);
+            border-radius: 0.5rem;
+            padding: 1rem;
         }
     }
 
