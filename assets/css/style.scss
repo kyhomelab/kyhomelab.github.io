@@ -913,7 +913,10 @@ a.navbar-item.is-active {
     .content {
         color: rgba(255, 255, 255, 0.9) !important;
 
-        p, li, blockquote, span, div {
+        // Universal selector to catch ALL text elements
+        *,
+        p, span, div, li, dt, dd, td, th, strong, em, b, i, u, small, mark,
+        blockquote, cite, q, abbr, time, address, label, legend, caption {
             color: rgba(255, 255, 255, 0.9) !important;
         }
 
@@ -922,6 +925,11 @@ a.navbar-item.is-active {
             text-shadow: 0 0 10px rgba(107, 76, 230, 0.5);
             margin-top: 2rem;
             margin-bottom: 1rem;
+        }
+
+        // Links should be cyan
+        a {
+            color: var(--cosmic-cyan) !important;
         }
 
         ol, ul, blockquote {
@@ -946,7 +954,7 @@ a.navbar-item.is-active {
 
         code {
             background: rgba(26, 29, 58, 0.6);
-            color: var(--cosmic-cyan);
+            color: var(--cosmic-cyan) !important;
             padding: 0.2rem 0.4rem;
             border-radius: 0.25rem;
         }
@@ -956,6 +964,17 @@ a.navbar-item.is-active {
             border: 1px solid var(--nebula-purple);
             border-radius: 0.5rem;
             padding: 1rem;
+
+            code {
+                background: transparent;
+            }
+        }
+
+        // Tables
+        table {
+            th, td {
+                border-color: var(--nebula-purple) !important;
+            }
         }
     }
 
@@ -963,6 +982,12 @@ a.navbar-item.is-active {
         margin: 2.5rem auto;
         word-break: break-word;
         max-width: -webkit-fill-available;
+        color: rgba(255, 255, 255, 0.9) !important;
+
+        // Catch-all for any text that might escape other selectors
+        * {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
     }
 
     #disqus_thread {
