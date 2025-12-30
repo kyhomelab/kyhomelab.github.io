@@ -190,6 +190,11 @@ body {
   overflow: hidden;
   transition: all 0.3s ease;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  line-height: 1;
 
   &::before {
     content: '';
