@@ -912,6 +912,7 @@ a.navbar-item.is-active {
     }
     .content {
         color: rgba(255, 255, 255, 0.9) !important;
+        line-height: 1.7;
 
         // Universal selector to catch ALL text elements
         *,
@@ -920,11 +921,25 @@ a.navbar-item.is-active {
             color: rgba(255, 255, 255, 0.9) !important;
         }
 
+        // Proper paragraph spacing
+        p {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
         h1, h2, h3, h4, h5, h6 {
             color: white !important;
             text-shadow: 0 0 10px rgba(107, 76, 230, 0.5);
-            margin-top: 2rem;
-            margin-bottom: 1rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.3;
+        }
+
+        // First heading shouldn't have top margin
+        h1:first-child,
+        h2:first-child,
+        h3:first-child {
+            margin-top: 0;
         }
 
         // Links should be cyan
@@ -932,24 +947,68 @@ a.navbar-item.is-active {
             color: var(--cosmic-cyan) !important;
         }
 
-        ol, ul, blockquote {
-            display: inline-block;
+        // Proper list styling
+        ul, ol {
+            display: block;
+            margin-bottom: 1.5rem;
+            margin-left: 2rem;
+            padding-left: 0;
         }
-        hr{
+
+        ul {
+            list-style-type: disc;
+            list-style-position: outside;
+        }
+
+        ol {
+            list-style-type: decimal;
+            list-style-position: outside;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+            padding-left: 0.5rem;
+        }
+
+        // Nested lists
+        ul ul, ol ul {
+            list-style-type: circle;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        ol ol, ul ol {
+            list-style-type: lower-alpha;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        // Blockquotes
+        blockquote {
+            display: block;
+            border-left: 4px solid var(--nebula-purple);
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        hr {
             background-color: var(--nebula-purple);
             opacity: 0.3;
+            margin: 2rem 0;
         }
+
         img, iframe {
             max-width: calc(100% - 25vw);
-            margin: 0.25rem auto;
+            margin: 1.5rem auto;
+            display: block;
             border-radius: 0.5rem;
             border: 1px solid rgba(107, 76, 230, 0.3);
             @media (max-width: 768px) {
                 max-width: calc(100% - 5vw);
             }
-        }
-        ul, ol {
-            display: inline-block;
         }
 
         code {
@@ -964,6 +1023,8 @@ a.navbar-item.is-active {
             border: 1px solid var(--nebula-purple);
             border-radius: 0.5rem;
             padding: 1rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
 
             code {
                 background: transparent;
@@ -972,8 +1033,18 @@ a.navbar-item.is-active {
 
         // Tables
         table {
+            width: 100%;
+            margin: 1.5rem 0;
+            border-collapse: collapse;
+
             th, td {
-                border-color: var(--nebula-purple) !important;
+                border: 1px solid var(--nebula-purple);
+                padding: 0.75rem;
+            }
+
+            th {
+                background: rgba(107, 76, 230, 0.2);
+                font-weight: 600;
             }
         }
     }
