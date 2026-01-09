@@ -22,6 +22,10 @@
   link: https://github.com/kyhomelab/Gemini-CLI-VM
   image: /assets/images/project-gemini-robot-laptop.jpg
   description: A secure, remotely accessible, and personalized Gemini CLI environment, hosted in a virtual machine, designed for portfolio building, technical write-ups, and research.
+- name: Cloud-to-Ground Honeypot & SOAR
+  link: https://github.com/kyhomelab/cloud-honeypot
+  image: /assets/images/project-cloud-honeypot-attack-map.png
+  description: Hybrid Azure honeypot capturing real-world RDP attacks, enriching them with threat intelligence, and automatically publishing IOCs to a public feed. Features Infrastructure as Code deployment, KQL detection engineering, and n8n automation workflows.
 - name: Malware Analysis Lab
   link: https://github.com/kyhomelab
   image: /assets/images/project-malware-analysis-astronaut.jpg
