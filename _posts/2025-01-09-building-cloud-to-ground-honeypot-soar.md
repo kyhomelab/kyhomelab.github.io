@@ -222,6 +222,7 @@ https://login.microsoftonline.com/<TENANT_ID>/oauth2/token
 
 **Solution:** Used `JSON.stringify()` in the n8n expression to handle escaping automatically:
 
+{% raw %}
 ```javascript
 {{
 JSON.stringify({
@@ -233,6 +234,7 @@ JSON.stringify({
 })
 }}
 ```
+{% endraw %}
 
 **Lesson:** When dealing with multi-line text in API requests, always use proper JSON encoding functions.
 
