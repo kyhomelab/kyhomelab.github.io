@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "Building Cloud-to-Ground: A Hybrid Azure Honeypot & SOAR Integration"
-date: 2025-01-09 10:00:00 -0500
+date: 2026-01-09 10:00:00 -0500
 categories: [cybersecurity, cloud-security]
 tags: [azure, sentinel, honeypot, soar, automation, threat-intelligence, n8n, kql]
 author: Kyle Stanley
 description: "How I built a hybrid cloud honeypot that captures real-world attacks in Azure, automates threat intelligence workflows with n8n, and publishes a public blocklist feed - including the challenges I faced and lessons learned."
 excerpt: "What happens when you expose RDP to the internet? I built an automated pipeline to find out - and turn that chaos into actionable threat intelligence."
-image: /assets/images/posts/2025-01-09-cloud-honeypot-sentinel-map.png
+image: /assets/images/posts/2026-01-09-cloud-honeypot-sentinel-map.png
 ---
 
 # Building Cloud-to-Ground: A Hybrid Azure Honeypot & SOAR Integration
@@ -42,7 +42,7 @@ This project became my answer to all three questions.
 
 The system connects three distinct environments: Azure cloud infrastructure, my local homelab SOC, and a public GitHub Gist for threat sharing.
 
-![Azure Sentinel Attack Map](/assets/images/posts/2025-01-09-cloud-honeypot-sentinel-map.png)
+![Azure Sentinel Attack Map](/assets/images/posts/2026-01-09-cloud-honeypot-sentinel-map.png)
 *Real-time attack map showing brute-force attempts from around the world*
 
 Here's how the components work together:
@@ -120,7 +120,7 @@ The n8n workflow taught me more about API integration than I expected. Getting A
 - API versioning inconsistencies (Azure's older APIs sometimes work better)
 - Request body encoding (JSON vs form-urlencoded)
 
-![n8n Workflow Overview](/assets/images/posts/2025-01-09-cloud-honeypot-n8n-workflow.png)
+![n8n Workflow Overview](/assets/images/posts/2026-01-09-cloud-honeypot-n8n-workflow.png)
 *The n8n workflow that orchestrates the entire automation pipeline*
 
 These skills immediately transferred to other projects. Now when I look at any security tool's API documentation, I know the right questions to ask: What authentication method? What rate limits? What's the response format?
@@ -158,14 +158,14 @@ No lab simulation can replicate the randomness and persistence of actual interne
 
 The final piece - and honestly my favorite part - is the public blocklist. Every 10 minutes, n8n pushes updated attacker IPs to a GitHub Gist:
 
-![GitHub Gist Threat Feed](/assets/images/posts/2025-01-09-cloud-honeypot-gist-feed.png)
+![GitHub Gist Threat Feed](/assets/images/posts/2026-01-09-cloud-honeypot-gist-feed.png)
 *The automatically generated public threat feed with attack volume metrics*
 
 The feed format is simple but useful:
 
 ```
 # Cloud Honeypot Threat Feed
-# Generated: 2025-01-09T15:30:00.000Z
+# Generated: 2026-01-09T15:30:00.000Z
 # Total Unique Attackers: 247
 
 IP ADDRESS       | COUNTRY         | CITY            | ATTACK VOLUME
