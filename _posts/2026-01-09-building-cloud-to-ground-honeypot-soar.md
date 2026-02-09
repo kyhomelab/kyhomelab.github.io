@@ -7,7 +7,7 @@ tags: [azure, sentinel, honeypot, soar, automation, threat-intelligence, n8n, kq
 author: Kyle Stanley
 description: "How I built a hybrid cloud honeypot that captures real-world attacks in Azure, automates threat intelligence workflows with n8n, and publishes a public blocklist feed - including the challenges I faced and lessons learned."
 excerpt: "What happens when you expose RDP to the internet? I built an automated pipeline to find out - and turn that chaos into actionable threat intelligence."
-image: /assets/images/posts/2026-01-09-cloud-honeypot.jpg
+post-image: /assets/images/posts/2026-01-09-cloud-honeypot.jpg
 ---
 
 # Building Cloud-to-Ground: A Hybrid Azure Honeypot & SOAR Integration
