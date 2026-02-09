@@ -7,7 +7,7 @@ tags: [portfolio, design, space, jekyll, css]
 author: Kyle Stanley
 description: "A casual look at why I redesigned my portfolio with a space theme, complete with nebula colors, orbital rings, and enough sci-fi vibes to make Fry proud."
 excerpt: "From boring to stellar - here's why my portfolio now looks like it belongs in the Futurama universe."
-image: /assets/images/posts/portfolio-redesign-2025.png
+image: /assets/images/posts/2025-12-30-portfolio-redesign.jpg
 ---
 
 # Welcome to the Cosmos: A Portfolio Redesign Journey
