@@ -801,72 +801,75 @@ a.navbar-item.is-active {
     }
 
     #project-card {
-        background: rgba(26, 29, 58, 0.7);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 2px solid rgba(107, 76, 230, 0.3);
-        border-radius: 1rem;
-        box-shadow:
-            0 8px 32px rgba(0, 0, 0, 0.4),
-            0 0 20px rgba(107, 76, 230, 0.2);
-        transform: scale(0.95);
-        transition: all 0.4s ease;
         margin-bottom: 0.5rem !important;
-        display: inline-table;
-        position: relative;
-        overflow: hidden;
+        display: block;
 
-        &::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(107, 76, 230, 0.15) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.4s ease, transform 0.4s ease;
-            z-index: 1;
-        }
-
-        &:hover {
-            transform: scale(1) translateY(-10px);
-            border-color: var(--cosmic-cyan);
+        a {
+            display: block;
+            background: rgba(26, 29, 58, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 2px solid rgba(107, 76, 230, 0.3);
+            border-radius: 1rem;
             box-shadow:
-                0 15px 50px rgba(0, 0, 0, 0.6),
-                0 0 40px rgba(107, 76, 230, 0.5),
-                0 0 60px rgba(0, 212, 255, 0.3);
+                0 8px 32px rgba(0, 0, 0, 0.4),
+                0 0 20px rgba(107, 76, 230, 0.2);
+            transform: scale(0.95);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
 
             &::before {
-                opacity: 1;
-                transform: rotate(45deg);
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                background: radial-gradient(circle, rgba(107, 76, 230, 0.15) 0%, transparent 70%);
+                opacity: 0;
+                transition: opacity 0.4s ease, transform 0.4s ease;
+                z-index: 1;
+            }
+
+            &:hover {
+                transform: scale(1) translateY(-10px);
+                border-color: var(--cosmic-cyan);
+                box-shadow:
+                    0 15px 50px rgba(0, 0, 0, 0.6),
+                    0 0 40px rgba(107, 76, 230, 0.5),
+                    0 0 60px rgba(0, 212, 255, 0.3);
+
+                &::before {
+                    opacity: 1;
+                    transform: rotate(45deg);
+                }
+            }
+
+            .card {
+                background: transparent !important;
+                transition: all 0.3s ease;
+                position: relative;
+                z-index: 2;
+
+                &:hover {
+                    background-color: rgba(26, 29, 58, 0.5) !important;
+                }
+
+                .card-content {
+                    .title {
+                        color: var(--star-white);
+                        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+                    }
+
+                    .content {
+                        color: rgba(255, 255, 255, 0.85);
+                        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+                    }
+                }
             }
         }
     }
-
-    .card {
-        background: transparent !important;
-        transition: all 0.3s ease;
-        position: relative;
-        z-index: 2;
-
-        &:hover {
-            background-color: rgba(26, 29, 58, 0.5) !important;
-        }
-
-        .card-content {
-            .title {
-                color: var(--star-white);
-                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-            }
-
-            .content {
-                color: rgba(255, 255, 255, 0.85);
-                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-            }
-        }
-    }
-}
 
 #post {
     background: linear-gradient(180deg,
