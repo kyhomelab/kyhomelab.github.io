@@ -1,0 +1,24 @@
+<section class="hero is-fullheight has-text-centered" id="working-on">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title is-1 has-text-weight-bold">Currently Working On</h1>
+            <br>
+            <h2 class="subtitle">Active projects and initiatives</h2>
+            <br>
+            <div class="columns is-multiline is-centered">
+                {% for item in site.data.working-on %}
+                <div class="column is-one-quarter-desktop is-half-tablet is-full-mobile">
+                    <div class="box working-on-card">
+                        <div class="working-on-icon" aria-hidden="true">
+                            <i class="fas {{ item.icon }} fa-2x"></i>
+                        </div>
+                        <h3 class="working-on-title">{{ item.name }}</h3>
+                        <span class="working-on-status">{{ item.status }}</span>
+                        <p class="working-on-description">{{ item.description }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

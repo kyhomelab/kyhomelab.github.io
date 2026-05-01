@@ -1,0 +1,19 @@
+- name: "Unauthorized Software Detection & Remediation"
+  description: "Building KQL detection rules and automated PowerShell remediation scripts for rogue RMM tools and PUA browsers in Microsoft Defender"
+  icon: "fa-shield-halved"
+  status: "In Progress"
+
+- name: "Malware Analysis Pipeline"
+  description: "Automated malware analysis using CAPEv2, Proxmox, and n8n workflows with detection engineering insights from 25+ samples"
+  icon: "fa-virus"
+  status: "Active"
+
+- name: "SOC Lab Environment"
+  description: "Unified SOC lab with OPNsense segmentation, SIEM integration, and Caldera adversary emulation"
+  icon: "fa-server"
+  status: "Active"
+
+- name: "Cloud Honeypot & SOAR"
+  description: "Cloud-to-ground honeypot deployment with automated threat intelligence and SOAR integration"
+  icon: "fa-cloud-bolt"
+  status: "Active"
