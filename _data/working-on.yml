@@ -3,6 +3,16 @@
   icon: "fa-shield-halved"
   status: "In Progress"
 
+- name: "Azure Identity Security Lab"
+  description: "Entra ID identity attack detection lab — building 15+ KQL detection rules in Microsoft Sentinel for password spray, MFA fatigue, and privilege escalation, with automated response via Microsoft Graph API and n8n SOAR workflows"
+  icon: "fa-id-badge"
+  status: "In Progress"
+
+- name: "Purple Team IR Campaign"
+  description: "Full IR lifecycle purple team campaign across 5 attack scenarios using MITRE Caldera, with detections across Wazuh, Suricata, and Sysmon and case management in TheHive"
+  icon: "fa-user-secret"
+  status: "In Progress"
+
 - name: "Malware Analysis Pipeline"
   description: "Automated malware analysis using CAPEv2, Proxmox, and n8n workflows with detection engineering insights from 25+ samples"
   icon: "fa-virus"

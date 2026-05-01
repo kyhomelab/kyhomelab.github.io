@@ -30,14 +30,6 @@
   link: https://github.com/kyhomelab/malware-analysis-pipeline
   image: /assets/images/project-malware-analysis-astronaut.jpg
   description: A dedicated isolated environment for safely analyzing malicious software, understanding attack vectors, and developing detection signatures. Equipped with REMnux, FLARE VM, and industry-standard analysis tools.
-- name: Azure Identity Security Lab
-  link: https://github.com/kyhomelab
-  image: /assets/images/project-homelab-astronaut-laptop.jpg
-  description: Entra ID identity attack detection lab covering password spray, MFA fatigue, and privilege escalation. Builds 15+ KQL detection rules in Microsoft Sentinel, automates response via Microsoft Graph API and n8n SOAR workflows, and documents IR playbooks for 5 identity attack scenarios.
-- name: Purple Team IR Campaign
-  link: https://github.com/kyhomelab
-  image: /assets/images/project-soc-astronaut-reading.jpg
-  description: Full IR lifecycle purple team campaign across 5 attack scenarios using MITRE Caldera adversary emulation. Detections span Wazuh (HIDS), Suricata (NIDS), and Sysmon; cases managed in TheHive with n8n SOAR automation. Demonstrates end-to-end SOC Analyst readiness from alert triage through documented remediation.
 - name: KQL Detection Query Library
   link: https://github.com/kyhomelab/kql-queries
   image: /assets/images/project-rdp-astronaut-compass.jpg
