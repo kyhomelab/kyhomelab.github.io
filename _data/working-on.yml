@@ -13,7 +13,3 @@
   icon: "fa-server"
   status: "Active"
 
-- name: "Cloud Honeypot & SOAR"
-  description: "Cloud-to-ground honeypot deployment with automated threat intelligence and SOAR integration"
-  icon: "fa-cloud-bolt"
-  status: "Active"
