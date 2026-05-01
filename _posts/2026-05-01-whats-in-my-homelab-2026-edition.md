@@ -85,7 +85,7 @@ The 16 TB drive is passed straight through to a TrueNAS VM that runs a single ZF
 - **Actual Budget** — self-hosted personal finance
 - **Homepage** — dashboard tying it all together
 
-This stack alone is what the 2024 lab couldn't do. Moving the HDD to passthrough and letting TrueNAS own the ZFS layer was the unlock.
+Most of this stack was already running in 2024 — HDD passthrough, ZFS, and the bulk of these apps were in place. The original "What's in My HomeLab" post just didn't document any of it. Two years on, it's time to give the household side of the lab the credit it's been quietly earning.
 
 ### Tailscale (LXC)
 Mesh VPN to reach the lab from anywhere. Replaces a traditional VPN with much less ceremony. It's a Proxmox container so it's tiny and always available.
