@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "What's in My HomeLab — 2026 Edition"
-date: 2026-05-01 10:00:00 -0500
+date: 2026-05-01 08:00:00 -0500
 categories: [homelab, cybersecurity]
 tags: [homelab, proxmox, truenas, soc, malware-analysis, sentinel, n8n, opnsense, virtualization, networking, plex]
 author: Kyle Stanley
