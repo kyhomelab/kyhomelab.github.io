@@ -109,10 +109,10 @@
   function play() {
     playing = true;
     playBtn.textContent = '⏸ PAUSE';
-    const speed = parseFloat(speedSelect.value);
-    const totalDuration = (tEnd - tStart);
+    /* speed = % slider movement per real second; 5 = full replay in 20s, 100 = full replay in 1s */
+    const pctPerSec = parseFloat(speedSelect.value);
     const stepMs = 100;
-    const stepPct = (stepMs * speed / totalDuration) * 100;
+    const stepPct = pctPerSec * (stepMs / 1000);
     playInterval = setInterval(function() {
       const next = parseFloat(slider.value) + stepPct;
       if (next >= 100) {
