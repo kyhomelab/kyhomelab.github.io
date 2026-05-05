@@ -228,12 +228,57 @@ body { background: radial-gradient(ellipse at top, var(--bg-mid) 0%, var(--bg-de
   box-shadow: 0 0 10px var(--neon-cyan);
 }
 
+/* === RESPONSIVE — TABLET (≤1024px) === */
+@media (max-width: 1024px) {
+  .attack-page { padding: 20px 14px; }
+  .attack-page h1 { font-size: 34px; letter-spacing: 2px; }
+  .stat-value { font-size: 28px; }
+  #map { height: 460px; }
+}
+
+/* === RESPONSIVE — MOBILE (≤768px) === */
 @media (max-width: 768px) {
-  .stats { grid-template-columns: repeat(2, 1fr); }
-  .charts { grid-template-columns: 1fr; }
-  .attack-page h1 { font-size: 28px; }
-  .controls .row { flex-direction: column; align-items: stretch; }
-  .time-display { min-width: 0; }
+  .attack-page { padding: 14px 10px; }
+  .attack-page h1 { font-size: 26px; letter-spacing: 1.5px; line-height: 1.1; }
+  .attack-page .subtitle { font-size: 11px; letter-spacing: 0.5px; margin-bottom: 18px; }
+
+  .stats { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .stat-card { padding: 12px 8px; }
+  .stat-value { font-size: 22px; }
+  .stat-label { font-size: 9px; letter-spacing: 1.5px; margin-top: 4px; }
+
+  #map { height: 380px; }
+
+  /* Controls — buttons in a wrapping row, slider on its own line */
+  .controls { padding: 14px 12px; }
+  .controls .row { flex-wrap: wrap; gap: 8px; }
+  .btn { padding: 8px 10px; font-size: 10px; letter-spacing: 1px; flex: 1 1 auto; min-width: 0; }
+  #timeline { flex-basis: 100%; min-width: 0; height: 12px; touch-action: pan-x; }
+  #timeline::-webkit-slider-thumb { width: 26px; height: 26px; }
+  #timeline::-moz-range-thumb { width: 26px; height: 26px; }
+  .speed-select { flex: 1 1 100%; padding: 8px; }
+  .time-display { min-width: 0; font-size: 11px; letter-spacing: 1px; }
+
+  .charts { grid-template-columns: 1fr; gap: 12px; }
+  .chart-card { padding: 14px; }
+  .chart-card h3 { font-size: 12px; letter-spacing: 1.5px; }
+  .bar-label { width: 100px; font-size: 11px; }
+  .bar-value { width: 60px; font-size: 11px; }
+
+  .footer-note { font-size: 10px; padding: 14px 4px 0; }
+
+  /* Bigger tap targets for Leaflet map controls */
+  .leaflet-touch .leaflet-bar a { width: 40px !important; height: 40px !important; line-height: 38px !important; }
+}
+
+/* === RESPONSIVE — SMALL PHONES (≤420px) === */
+@media (max-width: 420px) {
+  .attack-page h1 { font-size: 21px; letter-spacing: 1px; }
+  .attack-page .subtitle { font-size: 10px; }
+  .stat-value { font-size: 18px; }
+  #map { height: 320px; }
+  .btn { font-size: 9px; padding: 7px 6px; }
+  .bar-label { width: 80px; font-size: 10px; }
 }
 </style>
 
@@ -257,12 +302,12 @@ body { background: radial-gradient(ellipse at top, var(--bg-mid) 0%, var(--bg-de
       <button class="btn secondary" id="heat-btn">🔥 HEAT</button>
       <button class="btn secondary" id="lines-btn">📡 LINES</button>
       <input type="range" id="timeline" min="0" max="100" value="100" step="0.1" />
-      <select class="speed-select" id="speed">
-        <option value="1">Slow (100s)</option>
-        <option value="5" selected>Medium (20s)</option>
-        <option value="10">Fast (10s)</option>
-        <option value="25">Very Fast (4s)</option>
-        <option value="50">Lightning (2s)</option>
+      <select class="speed-select" id="speed" aria-label="Replay speed">
+        <option value="1">SLOW · 100s</option>
+        <option value="5" selected>MEDIUM · 20s</option>
+        <option value="10">FAST · 10s</option>
+        <option value="25">VERY FAST · 4s</option>
+        <option value="50">LIGHTNING · 2s</option>
       </select>
     </div>
     <div class="time-display" id="time-display" style="margin-top:14px">—</div>
