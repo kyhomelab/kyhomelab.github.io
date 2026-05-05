@@ -1,0 +1,372 @@
+---
+layout: default
+title: Honeypot Attack Map
+description: Interactive replay of real attackers captured by my Azure honeypot
+permalink: /honeypot-attacks/
+---
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@700;900&display=swap');
+
+:root {
+  --neon-cyan: #00F5FF;
+  --neon-magenta: #FF00AA;
+  --neon-yellow: #FFFF00;
+  --neon-green: #00FF9F;
+  --neon-red: #FF0040;
+  --bg-deep: #050510;
+  --bg-mid: #0a0a1f;
+  --bg-card: rgba(8, 8, 24, 0.85);
+}
+@keyframes flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(2); opacity: 0.4; }
+  100% { transform: scale(3); opacity: 0; }
+}
+
+body { background: radial-gradient(ellipse at top, var(--bg-mid) 0%, var(--bg-deep) 60%, #000 100%) !important; color: #ddd; }
+
+.attack-page { max-width: 1400px; margin: 0 auto; padding: 30px 20px; font-family: 'JetBrains Mono', monospace; }
+
+.attack-page h1 {
+  text-align: center; font-size: 42px; margin: 0 0 6px;
+  font-family: 'Orbitron', sans-serif; font-weight: 900; letter-spacing: 3px;
+  background: linear-gradient(90deg, var(--neon-cyan) 0%, var(--neon-magenta) 50%, var(--neon-yellow) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  background-color: transparent;
+  filter: drop-shadow(0 0 30px rgba(0, 245, 255, 0.5));
+  animation: flow 6s linear infinite;
+}
+.attack-page .subtitle { text-align: center; color: #8a8a8a; font-size: 13px; letter-spacing: 1px; margin: 0 0 30px; }
+
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 245, 255, 0.25);
+  border-radius: 4px;
+  padding: 18px 16px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 245, 255, 0.08);
+}
+.stat-value {
+  font-family: 'Orbitron', sans-serif; font-weight: 900;
+  font-size: 32px; letter-spacing: 1px;
+  text-shadow: 0 0 12px currentColor, 0 0 24px currentColor;
+}
+.stat-label { font-size: 11px; color: #8a8a8a; letter-spacing: 2px; text-transform: uppercase; margin-top: 8px; }
+.stat-card.cyan .stat-value { color: var(--neon-cyan); }
+.stat-card.magenta .stat-value { color: var(--neon-magenta); }
+.stat-card.yellow .stat-value { color: var(--neon-yellow); }
+.stat-card.green .stat-value { color: var(--neon-green); }
+
+#map {
+  height: 580px;
+  background: #0a0a1f;
+  border: 1px solid rgba(0, 245, 255, 0.3);
+  border-radius: 4px;
+  box-shadow: 0 0 30px rgba(0, 245, 255, 0.15);
+  margin-bottom: 16px;
+}
+
+.controls {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 245, 255, 0.25);
+  border-radius: 4px;
+  padding: 18px 22px;
+  margin-bottom: 24px;
+  box-shadow: 0 0 20px rgba(0, 245, 255, 0.08);
+}
+.controls .row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.btn {
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta));
+  background-size: 200% auto;
+  border: none; color: #050510;
+  padding: 8px 18px; border-radius: 4px;
+  font-family: 'Orbitron', sans-serif; font-weight: 700; letter-spacing: 1.5px;
+  font-size: 12px; text-transform: uppercase;
+  cursor: pointer; transition: all 0.2s;
+  animation: flow 6s linear infinite;
+  box-shadow: 0 0 12px rgba(0, 245, 255, 0.4);
+}
+.btn:hover { transform: translateY(-1px); box-shadow: 0 0 20px rgba(255, 0, 170, 0.6); }
+.btn.secondary { background: transparent; color: var(--neon-cyan); border: 1px solid var(--neon-cyan); animation: none; box-shadow: none; }
+.btn.secondary:hover { background: rgba(0, 245, 255, 0.1); box-shadow: 0 0 12px rgba(0, 245, 255, 0.3); }
+
+#timeline {
+  flex: 1; -webkit-appearance: none; appearance: none;
+  height: 6px; border-radius: 3px;
+  background: linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta), var(--neon-yellow));
+  outline: none;
+  background-size: 200% auto;
+  animation: flow 8s linear infinite;
+  cursor: pointer;
+}
+#timeline::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: #fff; border: 2px solid var(--neon-cyan);
+  box-shadow: 0 0 16px var(--neon-cyan), 0 0 28px var(--neon-cyan);
+  cursor: grab;
+}
+#timeline::-moz-range-thumb {
+  width: 18px; height: 18px; border-radius: 50%;
+  background: #fff; border: 2px solid var(--neon-cyan);
+  box-shadow: 0 0 16px var(--neon-cyan);
+  cursor: grab;
+}
+
+.time-display { color: var(--neon-yellow); font-family: 'Orbitron', sans-serif; font-size: 14px; letter-spacing: 1.5px; text-shadow: 0 0 8px var(--neon-yellow); min-width: 240px; text-align: center; }
+.speed-select { background: transparent; color: var(--neon-cyan); border: 1px solid var(--neon-cyan); padding: 6px 10px; border-radius: 4px; font-family: 'JetBrains Mono', monospace; font-size: 12px; cursor: pointer; }
+.speed-select option { background: #0a0a1f; }
+
+.charts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.chart-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 245, 255, 0.25);
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 245, 255, 0.08);
+}
+.chart-card h3 {
+  font-family: 'Orbitron', sans-serif; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; font-size: 13px; margin: 0 0 16px;
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+}
+.bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; font-size: 12px; }
+.bar-label { width: 140px; flex-shrink: 0; color: #ccc; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bar-track { flex: 1; height: 14px; background: rgba(255, 255, 255, 0.05); border-radius: 2px; overflow: hidden; }
+.bar-fill { height: 100%; background: linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta)); transition: width 0.3s ease; box-shadow: 0 0 8px rgba(0, 245, 255, 0.4); }
+.bar-value { width: 80px; text-align: right; color: var(--neon-yellow); font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 12px; }
+
+.footer-note { text-align: center; color: #777; font-size: 11px; margin: 30px 0 10px; padding-top: 16px; border-top: 1px solid rgba(0, 245, 255, 0.15); }
+.footer-note a { color: var(--neon-cyan); text-decoration: none; text-shadow: 0 0 8px rgba(0, 245, 255, 0.4); }
+
+/* Leaflet dark overrides */
+.leaflet-container { background: #0a0a1f !important; }
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background: rgba(8, 8, 24, 0.96) !important;
+  color: #ddd !important;
+  border: 1px solid var(--neon-cyan) !important;
+  box-shadow: 0 0 20px rgba(0, 245, 255, 0.4) !important;
+  font-family: 'JetBrains Mono', monospace !important;
+}
+.leaflet-popup-content { font-size: 12px; line-height: 1.5; }
+.leaflet-popup-content strong { color: var(--neon-cyan); }
+.leaflet-control-attribution { background: rgba(0, 0, 0, 0.6) !important; color: #888 !important; }
+.leaflet-control-attribution a { color: var(--neon-cyan) !important; }
+
+.attack-marker {
+  border-radius: 50%;
+  background: var(--neon-magenta);
+  box-shadow: 0 0 12px var(--neon-magenta), 0 0 24px var(--neon-magenta);
+  border: 1.5px solid var(--neon-cyan);
+}
+.attack-marker.new::after {
+  content: ''; position: absolute; inset: -4px;
+  border: 2px solid var(--neon-yellow); border-radius: 50%;
+  animation: pulse 1.2s ease-out;
+}
+
+.marker-cluster-small, .marker-cluster-medium, .marker-cluster-large {
+  background: rgba(0, 245, 255, 0.2) !important;
+}
+.marker-cluster-small div, .marker-cluster-medium div, .marker-cluster-large div {
+  background: rgba(255, 0, 170, 0.6) !important;
+  color: #fff !important;
+  font-family: 'Orbitron', sans-serif !important;
+  font-weight: 700 !important;
+  border: 1px solid var(--neon-cyan);
+  box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+@media (max-width: 768px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .charts { grid-template-columns: 1fr; }
+  .attack-page h1 { font-size: 28px; }
+  .controls .row { flex-direction: column; align-items: stretch; }
+  .time-display { min-width: 0; }
+}
+</style>
+
+<div class="attack-page">
+  <h1>▸ HONEYPOT ATTACK MAP ◂</h1>
+  <p class="subtitle">REAL ATTACKERS CAPTURED BY MY AZURE HONEYPOT — 30-HOUR REPLAY</p>
+
+  <div class="stats">
+    <div class="stat-card cyan"><div class="stat-value" id="stat-ips">0</div><div class="stat-label">Unique IPs</div></div>
+    <div class="stat-card magenta"><div class="stat-value" id="stat-attempts">0</div><div class="stat-label">Total Attempts</div></div>
+    <div class="stat-card yellow"><div class="stat-value" id="stat-countries">0</div><div class="stat-label">Countries</div></div>
+    <div class="stat-card green"><div class="stat-value" id="stat-asns">0</div><div class="stat-label">Source ASNs</div></div>
+  </div>
+
+  <div id="map"></div>
+
+  <div class="controls">
+    <div class="row">
+      <button class="btn" id="play-btn">▶ PLAY</button>
+      <button class="btn secondary" id="reset-btn">⏮ RESET</button>
+      <input type="range" id="timeline" min="0" max="100" value="100" step="0.1" />
+      <select class="speed-select" id="speed">
+        <option value="100">1x</option>
+        <option value="500">5x</option>
+        <option value="2000" selected>20x</option>
+        <option value="5000">50x</option>
+        <option value="10000">100x</option>
+      </select>
+    </div>
+    <div class="time-display" id="time-display" style="margin-top:14px">—</div>
+  </div>
+
+  <div class="charts">
+    <div class="chart-card">
+      <h3>▸ Top Source Countries</h3>
+      <div id="chart-countries"></div>
+    </div>
+    <div class="chart-card">
+      <h3>▸ Top Source ASNs</h3>
+      <div id="chart-asns"></div>
+    </div>
+  </div>
+
+  <p class="footer-note">
+    Data captured by my <a href="/blog/building-cloud-to-ground-honeypot-soar">Cloud-to-Ground Honeypot</a> deployment in Azure Sentinel,
+    enriched via n8n SOAR workflows, and published as a public threat feed at the
+    <a href="https://gist.github.com/kyhomelab/eb6f58df93df4ea994b1a2a66d8610e6" target="_blank" rel="noopener">honeypot blocklist gist</a>.
+    Replay window: 2026-02-12 → 2026-02-13 (30 hourly snapshots). Geocoding via ip-api.com.
+    Built with Leaflet + Leaflet.markercluster, dark basemap by CartoDB.
+  </p>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script>
+(async function() {
+  const data = await fetch('/assets/data/honeypot-attacks.json').then(r => r.json());
+  const all = data.attacks;
+  const tStart = new Date(data.meta.window.start).getTime();
+  const tEnd = new Date(data.meta.window.end).getTime();
+
+  // Map setup
+  const map = L.map('map', { worldCopyJump: true, minZoom: 2, maxZoom: 8 }).setView([25, 0], 2);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
+    attribution: '© OpenStreetMap © CARTO',
+    subdomains: 'abcd', maxZoom: 19
+  }).addTo(map);
+
+  const cluster = L.markerClusterGroup({
+    showCoverageOnHover: false,
+    spiderfyOnMaxZoom: true,
+    chunkedLoading: true,
+    iconCreateFunction: function(c) {
+      const n = c.getChildCount();
+      const size = n < 10 ? 'small' : n < 50 ? 'medium' : 'large';
+      return L.divIcon({ html: '<div><span>' + n + '</span></div>', className: 'marker-cluster marker-cluster-' + size, iconSize: L.point(40, 40) });
+    }
+  });
+  map.addLayer(cluster);
+
+  // Build markers — keep references for filtering
+  const markers = all.map(a => {
+    const radius = Math.max(4, Math.min(18, Math.log10(Math.max(a.attempts, 1)) * 3));
+    const m = L.circleMarker([a.lat, a.lon], {
+      radius, color: '#00F5FF', weight: 1.5, fillColor: '#FF00AA', fillOpacity: 0.7
+    });
+    m.bindPopup(
+      '<strong>' + a.ip + '</strong><br>' +
+      (a.city && a.city !== 'Unknown' ? a.city + ', ' : '') + (a.country || '?') + '<br>' +
+      '<strong>' + a.attempts.toLocaleString() + '</strong> attempts<br>' +
+      (a.asname ? '<small>' + a.asname + '</small>' : '')
+    );
+    m._ts = new Date(a.ts).getTime();
+    m._data = a;
+    return m;
+  });
+
+  function setTimePosition(pct) {
+    const cutoff = tStart + (tEnd - tStart) * pct;
+    document.getElementById('time-display').textContent = new Date(cutoff).toUTCString().replace(' GMT', ' UTC');
+    cluster.clearLayers();
+    let ips = 0, attempts = 0;
+    const countryCounts = {}, asnCounts = {};
+    const visible = [];
+    for (const m of markers) {
+      if (m._ts <= cutoff) {
+        visible.push(m);
+        const a = m._data;
+        ips++;
+        // Scale attempts proportionally to time progress (synthetic but reasonable)
+        const ipProgress = Math.min(1, (cutoff - m._ts) / (tEnd - tStart) + 0.05);
+        const a_attempts = Math.round(a.attempts * ipProgress);
+        attempts += a_attempts;
+        const c = a.country || 'Unknown';
+        countryCounts[c] = (countryCounts[c] || 0) + a_attempts;
+        const asn = a.asname || a.asn || 'Unknown';
+        asnCounts[asn] = (asnCounts[asn] || 0) + a_attempts;
+      }
+    }
+    cluster.addLayers(visible);
+    document.getElementById('stat-ips').textContent = ips.toLocaleString();
+    document.getElementById('stat-attempts').textContent = attempts.toLocaleString();
+    document.getElementById('stat-countries').textContent = Object.keys(countryCounts).length;
+    document.getElementById('stat-asns').textContent = Object.keys(asnCounts).length;
+    renderBars('chart-countries', countryCounts, 8);
+    renderBars('chart-asns', asnCounts, 8);
+  }
+
+  function renderBars(elId, counts, topN) {
+    const el = document.getElementById(elId);
+    const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, topN);
+    if (sorted.length === 0) { el.innerHTML = '<div style="color:#555">no data</div>'; return; }
+    const max = sorted[0][1];
+    el.innerHTML = sorted.map(([k, v]) => {
+      const pct = (v / max) * 100;
+      return '<div class="bar-row"><div class="bar-label" title="' + k + '">' + k + '</div>' +
+             '<div class="bar-track"><div class="bar-fill" style="width:' + pct + '%"></div></div>' +
+             '<div class="bar-value">' + v.toLocaleString() + '</div></div>';
+    }).join('');
+  }
+
+  // Wire up controls
+  const slider = document.getElementById('timeline');
+  slider.addEventListener('input', () => setTimePosition(slider.value / 100));
+
+  let playing = false, playInterval = null;
+  const playBtn = document.getElementById('play-btn');
+  const speedSelect = document.getElementById('speed');
+
+  function play() {
+    playing = true; playBtn.textContent = '⏸ PAUSE';
+    const speed = parseFloat(speedSelect.value);
+    const totalDuration = (tEnd - tStart);
+    const stepMs = 100;
+    const stepPct = (stepMs * speed / totalDuration) * 100;
+    playInterval = setInterval(() => {
+      const next = parseFloat(slider.value) + stepPct;
+      if (next >= 100) { slider.value = 100; setTimePosition(1); pause(); return; }
+      slider.value = next; setTimePosition(next / 100);
+    }, stepMs);
+  }
+  function pause() {
+    playing = false; playBtn.textContent = '▶ PLAY';
+    if (playInterval) clearInterval(playInterval);
+  }
+  playBtn.addEventListener('click', () => { playing ? pause() : play(); });
+  document.getElementById('reset-btn').addEventListener('click', () => {
+    pause(); slider.value = 0; setTimePosition(0);
+  });
+
+  // Initial render: full state
+  setTimePosition(1);
+})();
+</script>
