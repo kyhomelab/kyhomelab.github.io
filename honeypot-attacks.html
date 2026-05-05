@@ -187,6 +187,9 @@ body { background: radial-gradient(ellipse at top, var(--bg-mid) 0%, var(--bg-de
 .footer-note { text-align: center; color: #777; font-size: 11px; margin: 30px 0 10px; padding-top: 16px; border-top: 1px solid rgba(0, 245, 255, 0.15); }
 .footer-note a { color: var(--neon-cyan); text-decoration: none; text-shadow: 0 0 8px rgba(0, 245, 255, 0.4); }
 
+/* Keep navbar above Leaflet's internal panes (Leaflet uses z-index up to ~800) */
+.navbar.is-fixed-top { z-index: 1100 !important; }
+
 /* Leaflet dark overrides */
 .leaflet-container { background: #0a0a1f !important; }
 .leaflet-popup-content-wrapper, .leaflet-popup-tip {
