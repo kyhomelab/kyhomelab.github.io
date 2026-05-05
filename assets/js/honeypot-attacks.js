@@ -109,6 +109,11 @@
   function play() {
     playing = true;
     playBtn.textContent = '⏸ PAUSE';
+    /* If already at the end, restart from 0 */
+    if (parseFloat(slider.value) >= 99.9) {
+      slider.value = 0;
+      setTimePosition(0);
+    }
     /* speed = % slider movement per real second; 5 = full replay in 20s, 100 = full replay in 1s */
     const pctPerSec = parseFloat(speedSelect.value);
     const stepMs = 100;
