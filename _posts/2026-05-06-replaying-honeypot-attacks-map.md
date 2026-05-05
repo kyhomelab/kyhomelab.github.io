@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Replaying 2.7 Million Honeypot Attacks: From GitHub Gist to Interactive Map"
-date: 2026-05-04 22:30:00 -0500
+date: 2026-05-06 09:00:00 -0500
 categories: [cybersecurity, threat-intelligence, dataviz]
 tags: [honeypot, threat-intel, leaflet, mapbox, javascript, geoip, github-gist, dataviz, cyberpunk, attack-map]
 author: Kyle Stanley
