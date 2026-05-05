@@ -4,6 +4,9 @@
   const tStart = new Date(data.meta.window.start).getTime();
   const tEnd = new Date(data.meta.window.end).getTime();
 
+  /* Honeypot target location: Azure East US (Virginia) */
+  const TARGET = [37.4316, -78.6569];
+
   /* Map setup */
   const map = L.map('map', { worldCopyJump: true, minZoom: 2, maxZoom: 8 }).setView([25, 0], 2);
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
@@ -12,6 +15,18 @@
     maxZoom: 19
   }).addTo(map);
 
+  /* Target marker — animated pulsing honeypot pin */
+  const targetIcon = L.divIcon({
+    html: '<div class="honeypot-target"></div>',
+    className: 'honeypot-target-wrapper',
+    iconSize: [22, 22],
+    iconAnchor: [11, 11]
+  });
+  L.marker(TARGET, { icon: targetIcon, interactive: true })
+    .bindPopup('<strong>HONEYPOT TARGET</strong><br>Azure East US<br><small>Real attacks captured here</small>')
+    .addTo(map);
+
+  /* Marker cluster layer */
   const cluster = L.markerClusterGroup({
     showCoverageOnHover: false,
     spiderfyOnMaxZoom: true,
@@ -28,7 +43,25 @@
   });
   map.addLayer(cluster);
 
-  /* Build markers, keep references so we can filter by time */
+  /* Heatmap layer (toggled) */
+  const heatLayer = L.heatLayer([], {
+    radius: 22,
+    blur: 18,
+    maxZoom: 6,
+    minOpacity: 0.4,
+    gradient: {
+      0.0: 'rgba(0, 245, 255, 0.3)',
+      0.3: 'rgba(0, 255, 159, 0.6)',
+      0.6: 'rgba(255, 255, 0, 0.8)',
+      0.85: 'rgba(255, 0, 170, 0.9)',
+      1.0: 'rgba(255, 0, 64, 1)'
+    }
+  });
+
+  /* Attack lines layer (toggled) */
+  const linesLayer = L.layerGroup().addTo(map);
+
+  /* Build markers */
   const markers = all.map(function(a) {
     const radius = Math.max(4, Math.min(18, Math.log10(Math.max(a.attempts, 1)) * 3));
     const m = L.circleMarker([a.lat, a.lon], {
@@ -46,17 +79,60 @@
     );
     m._ts = new Date(a.ts).getTime();
     m._data = a;
+    m._lat = a.lat;
+    m._lon = a.lon;
     return m;
   });
+
+  /* State */
+  let mode = 'pins';      /* 'pins' or 'heat' */
+  let linesEnabled = false;
+  let prevVisibleIPs = new Set();
+
+  /* Generate quadratic-bezier arc points between origin and target */
+  function arcPath(from, to, segments) {
+    segments = segments || 24;
+    const lat0 = from[0], lon0 = from[1];
+    const lat1 = to[0], lon1 = to[1];
+    /* Curve upward — control point above midpoint, scaled by distance */
+    const dist = Math.sqrt((lat1 - lat0) * (lat1 - lat0) + (lon1 - lon0) * (lon1 - lon0));
+    const midLat = (lat0 + lat1) / 2 + Math.min(35, dist * 0.4);
+    const midLon = (lon0 + lon1) / 2;
+    const points = [];
+    for (let i = 0; i <= segments; i++) {
+      const t = i / segments;
+      const lat = (1 - t) * (1 - t) * lat0 + 2 * (1 - t) * t * midLat + t * t * lat1;
+      const lon = (1 - t) * (1 - t) * lon0 + 2 * (1 - t) * t * midLon + t * t * lon1;
+      points.push([lat, lon]);
+    }
+    return points;
+  }
+
+  /* Draw an attack arc from origin to target with CSS animation; auto-removes after 2.5s */
+  function fireArc(from) {
+    const path = arcPath(from, TARGET);
+    const line = L.polyline(path, {
+      color: '#FF00AA',
+      weight: 1.5,
+      opacity: 1,
+      className: 'attack-arc'
+    }).addTo(linesLayer);
+    setTimeout(function() {
+      linesLayer.removeLayer(line);
+    }, 2600);
+  }
 
   function setTimePosition(pct) {
     const cutoff = tStart + (tEnd - tStart) * pct;
     document.getElementById('time-display').textContent =
       new Date(cutoff).toUTCString().replace(' GMT', ' UTC');
-    cluster.clearLayers();
+
     let ips = 0, attempts = 0;
     const countryCounts = {}, asnCounts = {};
     const visible = [];
+    const heatPoints = [];
+    const currentVisibleIPs = new Set();
+
     for (let i = 0; i < markers.length; i++) {
       const m = markers[i];
       if (m._ts <= cutoff) {
@@ -70,9 +146,40 @@
         countryCounts[c] = (countryCounts[c] || 0) + a_attempts;
         const asn = a.asname || a.asn || 'Unknown';
         asnCounts[asn] = (asnCounts[asn] || 0) + a_attempts;
+        currentVisibleIPs.add(a.ip);
+        /* Heat points: weight by log of attempts */
+        const intensity = Math.min(1, Math.log10(Math.max(a_attempts, 1)) / 5);
+        heatPoints.push([m._lat, m._lon, intensity]);
       }
     }
-    cluster.addLayers(visible);
+
+    /* Update layer based on mode */
+    if (mode === 'pins') {
+      cluster.clearLayers();
+      cluster.addLayers(visible);
+      heatLayer.setLatLngs([]);
+    } else {
+      cluster.clearLayers();
+      heatLayer.setLatLngs(heatPoints);
+    }
+
+    /* Fire attack arcs for newly-visible IPs (if lines enabled & during play) */
+    if (linesEnabled) {
+      const newIPs = [];
+      for (let i = 0; i < markers.length; i++) {
+        const m = markers[i];
+        if (currentVisibleIPs.has(m._data.ip) && !prevVisibleIPs.has(m._data.ip)) {
+          newIPs.push(m);
+        }
+      }
+      /* Cap to avoid drowning the map */
+      const cap = Math.min(newIPs.length, 30);
+      for (let i = 0; i < cap; i++) {
+        fireArc([newIPs[i]._lat, newIPs[i]._lon]);
+      }
+    }
+    prevVisibleIPs = currentVisibleIPs;
+
     document.getElementById('stat-ips').textContent = ips.toLocaleString();
     document.getElementById('stat-attempts').textContent = attempts.toLocaleString();
     document.getElementById('stat-countries').textContent = Object.keys(countryCounts).length;
@@ -105,16 +212,17 @@
   let playing = false, playInterval = null;
   const playBtn = document.getElementById('play-btn');
   const speedSelect = document.getElementById('speed');
+  const heatBtn = document.getElementById('heat-btn');
+  const linesBtn = document.getElementById('lines-btn');
 
   function play() {
     playing = true;
     playBtn.textContent = '⏸ PAUSE';
-    /* If already at the end, restart from 0 */
     if (parseFloat(slider.value) >= 99.9) {
       slider.value = 0;
+      prevVisibleIPs = new Set();
       setTimePosition(0);
     }
-    /* speed = % slider movement per real second; 5 = full replay in 20s, 100 = full replay in 1s */
     const pctPerSec = parseFloat(speedSelect.value);
     const stepMs = 100;
     const stepPct = pctPerSec * (stepMs / 1000);
@@ -139,9 +247,39 @@
   document.getElementById('reset-btn').addEventListener('click', function() {
     pause();
     slider.value = 0;
+    prevVisibleIPs = new Set();
     setTimePosition(0);
   });
 
-  /* Initial render: show full state at t=end */
+  heatBtn.addEventListener('click', function() {
+    if (mode === 'pins') {
+      mode = 'heat';
+      heatBtn.classList.add('active');
+      heatBtn.textContent = '📍 PINS';
+      map.removeLayer(cluster);
+      heatLayer.addTo(map);
+    } else {
+      mode = 'pins';
+      heatBtn.classList.remove('active');
+      heatBtn.textContent = '🔥 HEAT';
+      map.removeLayer(heatLayer);
+      cluster.addTo(map);
+    }
+    setTimePosition(parseFloat(slider.value) / 100);
+  });
+
+  linesBtn.addEventListener('click', function() {
+    linesEnabled = !linesEnabled;
+    if (linesEnabled) {
+      linesBtn.classList.add('active');
+      linesBtn.textContent = '📡 LINES ON';
+    } else {
+      linesBtn.classList.remove('active');
+      linesBtn.textContent = '📡 LINES';
+      linesLayer.clearLayers();
+    }
+  });
+
+  /* Initial render: full state */
   setTimePosition(1);
 })();

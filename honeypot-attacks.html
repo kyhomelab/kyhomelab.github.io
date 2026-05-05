@@ -101,6 +101,41 @@ body { background: radial-gradient(ellipse at top, var(--bg-mid) 0%, var(--bg-de
 .btn:hover { transform: translateY(-1px); box-shadow: 0 0 20px rgba(255, 0, 170, 0.6); }
 .btn.secondary { background: transparent; color: var(--neon-cyan); border: 1px solid var(--neon-cyan); animation: none; box-shadow: none; }
 .btn.secondary:hover { background: rgba(0, 245, 255, 0.1); box-shadow: 0 0 12px rgba(0, 245, 255, 0.3); }
+.btn.secondary.active { background: rgba(255, 0, 170, 0.2); color: var(--neon-magenta); border-color: var(--neon-magenta); box-shadow: 0 0 16px rgba(255, 0, 170, 0.5); }
+
+/* Target marker — pulsing honeypot location */
+.honeypot-target {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: radial-gradient(circle, var(--neon-cyan) 30%, transparent 70%);
+  position: relative;
+}
+.honeypot-target::before, .honeypot-target::after {
+  content: ''; position: absolute; inset: 0;
+  border: 2px solid var(--neon-cyan); border-radius: 50%;
+  animation: target-pulse 2s ease-out infinite;
+}
+.honeypot-target::after { animation-delay: 1s; }
+@keyframes target-pulse {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(3.5); opacity: 0; }
+}
+
+/* Animated attack arc */
+.attack-arc {
+  stroke: var(--neon-magenta);
+  stroke-width: 1.5;
+  fill: none;
+  filter: drop-shadow(0 0 4px var(--neon-magenta));
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: arc-draw 1.2s ease-out forwards, arc-fade 2s ease-out 0.6s forwards;
+}
+@keyframes arc-draw {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes arc-fade {
+  to { opacity: 0; }
+}
 
 #timeline {
   flex: 1; -webkit-appearance: none; appearance: none;
@@ -216,6 +251,8 @@ body { background: radial-gradient(ellipse at top, var(--bg-mid) 0%, var(--bg-de
     <div class="row">
       <button class="btn" id="play-btn">▶ PLAY</button>
       <button class="btn secondary" id="reset-btn">⏮ RESET</button>
+      <button class="btn secondary" id="heat-btn">🔥 HEAT</button>
+      <button class="btn secondary" id="lines-btn">📡 LINES</button>
       <input type="range" id="timeline" min="0" max="100" value="100" step="0.1" />
       <select class="speed-select" id="speed">
         <option value="1">Slow (100s)</option>
@@ -250,4 +287,5 @@ body { background: radial-gradient(ellipse at top, var(--bg-mid) 0%, var(--bg-de
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
 <script src="/assets/js/honeypot-attacks.js" defer></script>
