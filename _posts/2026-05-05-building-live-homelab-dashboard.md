@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Building a Live HomeLab Dashboard with Prometheus and Grafana"
-date: 2026-05-05 09:00:00 -0500
+date: 2026-05-04 21:00:00 -0500
 categories: [homelab, observability, devops]
 tags: [grafana, prometheus, observability, monitoring, proxmox, truenas, devops, dashboarding, cyberpunk, css]
 author: Kyle Stanley
@@ -11,6 +11,8 @@ post-image: /assets/images/posts/placeholder-astronaut-golf.jpg
 ---
 
 # Building a Live HomeLab Dashboard with Prometheus and Grafana
+
+> **▸ See it live:** [grafana.kyhomelab.com](https://grafana.kyhomelab.com) — real metrics from my actual lab, updating every 30 seconds.
 
 I had a problem with my portfolio site. The projects looked fine, the writing was solid, but everything was static — screenshots, descriptions, links to GitHub. None of it actually *did* anything. A recruiter clicking through couldn't see whether the lab I wrote about even existed anymore, let alone whether it was healthy.
 
@@ -104,17 +106,17 @@ For a portfolio dashboard, the technical surface I wanted to show:
 - **Alert engineering** — six Grafana alert rules that catch the failure modes I care about most
 - **Public sharing with security boundaries** — read-only public dashboard, admin login still locked
 
-The dashboard right now sits at `http://192.168.1.180:3001/public-dashboards/...` on my LAN, and I'm wiring it up to `grafana.kyhomelab.com` via Cloudflare tunnel next so it'll be reachable from anywhere.
+The dashboard is live at **[grafana.kyhomelab.com](https://grafana.kyhomelab.com)**, exposed via a Cloudflare tunnel from TrueNAS. The root URL redirects to the public dashboard share token, so anybody hitting that URL lands directly on the metrics view — no login, no admin exposure. Admin paths (`/login`, `/admin`) are gated behind a Cloudflare Access policy that only authorizes my email.
 
 ## What's next
 
 A few follow-ups on the list:
 
-- **Cloudflare tunnel** to expose the public dashboard at a stable URL
 - **Telegram alert routing** so I get pinged when something trips overnight
 - **Grafana dashboard JSON in version control** so the whole config is reproducible
 - **A second drive in the ZFS pool** for actual redundancy — the pool is single-disk right now, which is the architectural problem this dashboard would have flagged earlier if I'd had it running
+- **Embed a live snapshot widget** on the portfolio homepage so the dashboard doesn't even need a click to show its first signal
 
-If you want to see a snapshot of what it looks like, the screenshot is up on my [portfolio homepage](/). If you're building something similar and want to compare notes, my GitHub is [kyhomelab](https://github.com/kyhomelab).
+If you want the live view, click the **Live HomeLab** button on the [portfolio homepage](/) or hit [grafana.kyhomelab.com](https://grafana.kyhomelab.com) directly. If you're building something similar and want to compare notes, my GitHub is [kyhomelab](https://github.com/kyhomelab).
 
 Most fun I've had with infrastructure code in a while.
