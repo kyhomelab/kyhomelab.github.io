@@ -7,7 +7,7 @@ tags: [honeypot, threat-intel, leaflet, mapbox, javascript, geoip, github-gist, 
 author: Kyle Stanley
 description: "How I turned 800 hourly snapshots of my honeypot blocklist gist into a live interactive attack map — git-cloning gists, GeoIP enrichment, and Leaflet heatmaps with cyberpunk neon."
 excerpt: "I had 800 historical snapshots of my Azure honeypot's blocklist sitting in a public GitHub gist — 527 unique attackers, 2.7 million attempts, 69 countries, accumulated over 37 days. Static threat-feed text. So I built a replay map: scrub a slider through the timeline, watch IPs appear, see arcs fire toward the honeypot, toggle a heatmap. Here's how it came together."
-post-image: /assets/images/posts/placeholder-astronaut-golf.jpg
+post-image: /assets/images/posts/2026-05-06-attack-map.jpg
 ---
 
 # Replaying 2.7 Million Honeypot Attacks: From GitHub Gist to Interactive Map

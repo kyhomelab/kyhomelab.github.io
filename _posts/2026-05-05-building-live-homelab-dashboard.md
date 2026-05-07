@@ -7,7 +7,7 @@ tags: [grafana, prometheus, observability, monitoring, proxmox, truenas, devops,
 author: Kyle Stanley
 description: "How I built a public-facing live dashboard for my homelab — Prometheus scrape pipeline, custom Grafana panels, cyberpunk neon theming, and the small disasters along the way."
 excerpt: "I wanted my portfolio to do something most don't — show real, live infrastructure metrics from my actual lab. So I stood up a Prometheus + Grafana stack on TrueNAS, scraped Proxmox and the host nodes, built a curated public dashboard, and themed the whole thing in cyberpunk neon. Here's how it came together — and the small disasters along the way."
-post-image: /assets/images/posts/placeholder-astronaut-golf.jpg
+post-image: /assets/images/posts/2026-05-04-homelab-dashboard.jpg
 ---
 
 # Building a Live HomeLab Dashboard with Prometheus and Grafana
