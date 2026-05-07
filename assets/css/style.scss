@@ -1118,8 +1118,10 @@ a.navbar-item.is-active {
         border-radius: 0.25rem;
         border: 2px solid var(--nebula-purple);
         box-shadow: 0 0 20px rgba(107, 76, 230, 0.5);
-        object-fit: contain;
+        object-fit: cover;
+        object-position: center;
         background-color: rgba(107, 76, 230, 0.15);
+        transform: scale(1.05);
     }
     .subtitle {
         letter-spacing: 0.05rem;
