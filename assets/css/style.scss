@@ -1111,7 +1111,8 @@ a.navbar-item.is-active {
         border-radius: 0.25rem;
         border: 2px solid var(--nebula-purple);
         box-shadow: 0 0 20px rgba(107, 76, 230, 0.5);
-        object-fit: cover;
+        object-fit: contain;
+        background-color: rgba(107, 76, 230, 0.15);
     }
     .subtitle {
         letter-spacing: 0.05rem;
